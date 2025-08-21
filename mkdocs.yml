@@ -1,0 +1,61 @@
+site_name: Data4WA
+site_description: Data4WA
+site_author: waterinag
+site_url: https://waterinag.github.io/Data4WA/
+edit_uri: edit/main/docs/
+
+copyright: "Copyright &copy; Aman Chaudhary"
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - search.highlight
+    # - navigation.sections
+    - navigation.expand
+    - content.code.copy
+  # logo: assets/logo.png
+  # favicon: assets/logo.ico
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/amanchry/
+    - icon: fontawesome/brands/github
+      link: https://github.com/amanchry
+    - icon: fontawesome/solid/envelope
+      link: mailto:amanchaudhary.web@gmail.com
+  
+nav:
+  - Introduction: index.md
+  - Environment Setup: setup.md
+  - Download Datasets:
+    - Precipitation (IMD): datasets/pcp_imd.md
+    - Precipitation (CHIRPS): datasets/pcp_chirps.md
+    - Evapotranspiration (WaPOR): datasets/eta_wapor.md
+    - Evapotranspiration (SSEBop): datasets/eta_ssebop.md
+    - Reference Evapotranspiration (WaPOR): datasets/ret_wapor.md
+    - Biomass Production (WaPOR): datasets/tbp_wapor.md
+    - Dry Matter Productivity (Copernicus): datasets/dmp_copernicus.md
+
+    
