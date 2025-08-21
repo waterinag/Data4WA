@@ -14,9 +14,9 @@ CHIRPS v3.0 benefits from nearly four times more sources of gauge data compared 
 - **Source**: [https://data.chc.ucsb.edu/products/CHIRPS/v3.0/](https://data.chc.ucsb.edu/products/CHIRPS/v3.0/)
 - **Format**: GeoTIFF
 - **Extent**: Global
-- **Data Availability**: 1981 - 
+- **Data Availability**: 1981 - present
 - **Spatial Resolution**: 5km
-- **Temporal Resolution**: Monthly
+- **Temporal Resolution**: Monthly and Annual
 
 ---
 
@@ -40,8 +40,8 @@ firstyear = 2018
 lastyear = 2024
 
 
-output_folder = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/CHIRPS_v3_PCP_M"   
-geojson_boundary = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/Shapefile/Zambia_L0.geojson" 
+output_folder = "CHIRPS_v3_PCP_M"   
+geojson_boundary = "Zambia_L0.geojson" 
 
 
 # resampling 5km chirps pcp to 300m
@@ -128,8 +128,8 @@ from osgeo import gdal
 firstyear = 2018
 lastyear = 2024
 
-output_folder = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/CHIRPS_v3_PCP_A"   
-geojson_boundary = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/Shapefile/Zambia_L0.geojson" 
+output_folder = "CHIRPS_v3_PCP_A"   
+geojson_boundary = "Zambia_L0.geojson" 
 
 
 # resampling 5km chirps pcp to 300m

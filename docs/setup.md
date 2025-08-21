@@ -1,14 +1,13 @@
 # ⚙️ Environment Setup for Dataset Download
 
-To download and process datasets, you need to set up a Python environment with geospatial libraries such as GDAL, Rasterio, and Xarray.
+To download and process datasets with Data4WA, you need a Python environment configured with common geospatial libraries such as GDAL, Rasterio, Xarray, and others.
 
-## 1: On Local PC
 
 ### 1: Install Conda (Recommended)
 
 Conda is a cross-platform environment manager that makes it easy to install geospatial libraries like GDAL.
 
-### Windows
+#### Windows
 
 1. Download the **Miniconda installer**:  
    👉 [Miniconda Windows 64-bit](https://docs.conda.io/en/latest/miniconda.html#windows-installers)
@@ -21,7 +20,7 @@ conda --version
 
 ---
 
-### MacOS OS
+#### MacOS OS
 
 1. Download the installer for macOS from:  
    👉 [Miniconda macOS](https://docs.conda.io/en/latest/miniconda.html#macos-installers)
@@ -40,8 +39,8 @@ conda --version
 ### 2: Create a Conda Environment
 
 ```bash
-conda create --name eqipa_env python=3.10
-conda activate eqipa_env
+conda create --name data4wa_env python=3.10
+conda activate data4wa_env
 ```
 
 ---
@@ -51,7 +50,7 @@ conda activate eqipa_env
 Use the `conda-forge` channel:
 
 ```bash
-conda install -c conda-forge gdal libgdal-jp2openjpeg 
+conda install -c conda-forge "gdal=3.10.*" libgdal-jp2openjpeg  
 ```
 
 Verify GDAL installation:
@@ -64,7 +63,7 @@ gdalinfo --version
 Then install required Python libraries:
 
 ```bash
-conda install pandas tqdm geopandas numpy xarray rioxarray rasterio netCDF4 requests
+pip install pandas tqdm geopandas numpy xarray rioxarray rasterio netCDF4 requests beautifulsoup4
 ```
 
 
@@ -72,88 +71,19 @@ conda install pandas tqdm geopandas numpy xarray rioxarray rasterio netCDF4 requ
 
 ```bash
 conda install -c conda-forge notebook ipykernel
-python -m ipykernel install --user --name=eqipa_env --display-name "Python (eqipa_env)"
+python -m ipykernel install --user --name=data4wa_env --display-name "Python (data4wa_env)"
 
 ```
 > To select the environment kernel in Jupyter:
-Kernel → Change Kernel → Python (eqipa_env)
+Kernel → Change Kernel → Python (data4wa_env)
 
 
 Optional Cleanup: If you ever want to remove the kernel, use:
 ```bash
-jupyter kernelspec uninstall eqipa_env
+jupyter kernelspec uninstall data4wa_env
 ```
 
----
-
-### Optional: Save Environment for Future Use
-
-```bash
-conda env export > eqipa_env.yml
-```
-
-Others can recreate the environment with:
-
-```bash
-conda env create -f eqipa_env.yml
-```
 
 ---
 
 
-
-
-## On Ubuntu (Without Conda)
-
-### 1. Install GDAL system packages
-
-```bash
-sudo apt-get install gdal-bin libgdal-dev libspatialindex-dev
-```
-
----
-
-### 2. Create and Activate a Python Virtual Environment
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
----
-
-### 3. Install Required Python Libraries
-
-```bash
-pip install pandas tqdm geopandas numpy xarray rioxarray rasterio netCDF4
-```
-
----
-
-### 4. Recommended `requirements.txt`
-
-You can create a `requirements.txt` for reuse:
-
-```txt
-pandas
-tqdm
-geopandas
-numpy
-xarray
-rioxarray
-rasterio
-netCDF4
-```
-
-Install with:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-
-## ✅ Next Step
-
-Once the environment is set up, proceed to the dataset you want to download.

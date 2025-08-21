@@ -11,9 +11,9 @@ For further information on the methodology read the WaPOR documentation availabl
 - **Source**: [https://console.cloud.google.com/storage/browser/fao-gismgr-wapor-3-data/DATA/WAPOR-3/MAPSET](https://console.cloud.google.com/storage/browser/fao-gismgr-wapor-3-data/DATA/WAPOR-3/MAPSET)
 - **Format**: GeoTIFF
 - **Extent**: Global
-- **Data Availability**: 2018–present - 
+- **Data Availability**: 2018 –present 
 - **Spatial Resolution**: 300m
-- **Temporal Resolution**: Monthly
+- **Temporal Resolution**: Monthly and Annual
 
 
 ---
@@ -34,8 +34,8 @@ firstyear = 2024
 lastyear = 2024
 
 
-output_folder = "/Users/amanchaudhary/Documents/Resources/World_Bank/Georgia/WaPOR_v3_L1_TBP_M"   
-geojson_boundary = "/Users/amanchaudhary/Documents/Resources/World_Bank/Georgia/Georgia_Country_boundary.geojson" 
+output_folder = "WaPOR_v3_L1_TBP_M"   
+geojson_boundary = "Zambia_L0.geojson" 
 
 
 
@@ -115,8 +115,8 @@ from osgeo import gdal
 firstyear = 2018
 lastyear = 2024
   
-output_folder = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/WaPOR_v3_L1_TBP_A"   
-geojson_boundary = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/Shapefile/Zambia_L0.geojson" 
+output_folder = "WaPOR_v3_L1_TBP_A"   
+geojson_boundary = "Zambia_L0.geojson" 
 
 
 

@@ -1,7 +1,7 @@
 # Actual Evapotranspiration (AETI)
 Evapotranspiration is the sum of the soil evaporation (E), canopy transpiration (T) and interception (I). 
 The sum of all three parameters i.e. the Actual Evapotranspiration and Interception (AETI) can be used to quantify the agricultural water consumption.
-For further information on the methodology read the WaPOR documentation available at: https://bitbucket.org/cioapps/wapor-et-look/wiki/Home
+For further information on the methodology read the WaPOR documentation available at: [https://bitbucket.org/cioapps/wapor-et-look/wiki/Home](https://bitbucket.org/cioapps/wapor-et-look/wiki/Home)
 ---
 
 
@@ -11,9 +11,9 @@ For further information on the methodology read the WaPOR documentation availabl
 - **Source**: [https://console.cloud.google.com/storage/browser/fao-gismgr-wapor-3-data/DATA/WAPOR-3/MAPSET](https://console.cloud.google.com/storage/browser/fao-gismgr-wapor-3-data/DATA/WAPOR-3/MAPSET)
 - **Format**: GeoTIFF
 - **Extent**: Global
-- **Data Availability**: 2018–present - 
+- **Data Availability**: 2018 – present 
 - **Spatial Resolution**: 300m
-- **Temporal Resolution**: Monthly
+- **Temporal Resolution**: Monthly and Annual
 
 ---
 
@@ -26,17 +26,20 @@ import numpy as np
 import rasterio
 from osgeo import gdal
 
-firstyear = 2023
+firstyear = 2024
 lastyear = 2024
+  
+output_folder = "WaPOR_v3_L1_AETI_M"   
+geojson_boundary = "Zambia_L0.geojson" 
 
-output_folder = "eta_wapor_v3_monthly_ind"
-geojson_boundary = "IndiaBoundary.geojson"
+
+
 os.makedirs(output_folder, exist_ok=True)
 
 for year in range(firstyear, lastyear + 1):
     for month in range(1, 13):
         filename = f"WAPOR-3.L1-AETI-M.{year}-{month:02d}.tif"
-        output_filename = f"wapor_eta_m_{year}_{month:02d}.tif"
+        output_filename = f"wapor3_eta_m_{year}_{month:02d}.tif"
         output_path = os.path.join(output_folder, output_filename)
 
         # Skip if already processed
@@ -107,8 +110,8 @@ from osgeo import gdal
 firstyear = 2018
 lastyear = 2024
   
-output_folder = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/WaPOR_v3_L1_AETI_A"   
-geojson_boundary = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/Shapefile/Zambia_L0.geojson" 
+output_folder = "WaPOR_v3_L1_AETI_A"   
+geojson_boundary = "Zambia_L0.geojson" 
 
 
 

@@ -1,5 +1,5 @@
 # Precipitation (IMD)
-IMD New High Spatial Resolution (0.25X0.25 degree) Long Period Daily Gridded Rainfall Data Set Over India. This data product is a very high spatial resolution daily gridded rainfall data (0.25 x 0.25 degree). The unit of rainfall is in millimeter (mm).
+The India Meteorological Department (IMD) provides a high-resolution (0.25X0.25 degree) daily gridded rainfall dataset for India.
 
 ---
 ## Dataset Overview
@@ -8,7 +8,7 @@ IMD New High Spatial Resolution (0.25X0.25 degree) Long Period Daily Gridded Rai
 - **Source**: [https://www.imdpune.gov.in/cmpg/Griddata/Rainfall_25_NetCDF.html](https://www.imdpune.gov.in/cmpg/Griddata/Rainfall_25_NetCDF.html)
 - **Format**: NetCDF (`.nc`)
 - **Extent**: India
-- **Data Availability**: 1901 - 
+- **Data Availability**: 1901 - present
 - **Spatial Resolution**: 0.25° x 0.25°
 - **Temporal Resolution**: Daily
 

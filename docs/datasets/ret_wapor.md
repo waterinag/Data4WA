@@ -1,7 +1,7 @@
 # Reference Evapotranspiration (RET) 
-Reference evapotranspiration (RET) is defined as the evapotranspiration from a hypothetical reference crop. It simulates the behaviour of a well-watered grass surface and can be used to estimate potential ET for different crops by applying predefined crop coefficients. This information can be used in the design of irrigation schemes. Together with estimates of the evaporation, transpiration and interception, crop coefficients may be derived as the ratio between ETIa and RET. This information may be combined with land cover maps, to infer crop coefficients during the growing season for different type of crops. RET is not influenced by land cover and can be calculated using standard weather measurements and solar radiation.
+Reference evapotranspiration (RET) is defined as the evapotranspiration from a hypothetical reference crop. It simulates the behaviour of a well-watered grass surface and can be used to estimate potential ET for different crops by applying predefined crop coefficients. This information can be used in the design of irrigation schemes. 
 
-For further information on the methodology read the WaPOR documentation available at: https://bitbucket.org/cioapps/wapor-et-look/wiki/Home
+For further information on the methodology read the WaPOR documentation available at: [https://bitbucket.org/cioapps/wapor-et-look/wiki/Home](https://bitbucket.org/cioapps/wapor-et-look/wiki/Home)
 
 ---
 
@@ -14,7 +14,7 @@ For further information on the methodology read the WaPOR documentation availabl
 - **Extent**: Global
 - **Data Availability**: 2018 - present 
 - **Spatial Resolution**: 30 km
-- **Temporal Resolution**: Monthly
+- **Temporal Resolution**: Monthly and Annual
 
 ---
 
@@ -31,8 +31,8 @@ lastyear = 2024
   
 
 
-output_folder = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/WaPOR_v3_RET_M"   
-geojson_boundary = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/Shapefile/Zambia_L0.geojson" 
+output_folder = "WaPOR_v3_RET_M"   
+geojson_boundary = "Zambia_L0.geojson" 
 
 
 
@@ -136,8 +136,8 @@ from osgeo import gdal
 firstyear = 2018
 lastyear = 2024
   
-output_folder = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/WaPOR_v3_RET_A"   
-geojson_boundary = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/Shapefile/Zambia_L0.geojson" 
+output_folder = "WaPOR_v3_RET_A"   
+geojson_boundary = "Zambia_L0.geojson" 
 
 
 os.makedirs(output_folder, exist_ok=True)

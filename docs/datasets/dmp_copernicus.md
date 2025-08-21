@@ -1,6 +1,6 @@
 # Dry Matter Productivity (DMP)
 
-Represents the overall growth rate or dry biomass increase of the vegetation and is directly related to ecosystem Net Primary Production (NPP), however with units customized for agro-statistical purposes (kg/ha/day). Every 10-days estimates are available at global scale in the spatial resolution of about 1km and with the temporal extent from 1999 to June 2020.
+DMP Represents the overall growth rate or dry biomass increase of the vegetation and is directly related to ecosystem Net Primary Production (NPP), however with units customized for agro-statistical purposes (kg/ha/day). Every 10-days estimates are available at global scale in the spatial resolution of about 1km and with the temporal extent from 1999 to June 2020.
 
 ---
 
@@ -17,9 +17,33 @@ Represents the overall growth rate or dry biomass increase of the vegetation and
 
 ---
 
+!!! warning "Important"  
+
+    If you encounter errors like **"Too Many Requests"** or connection issues 
+    while running the script, it usually means the **Copernicus server** is 
+    throttling requests. Please wait for some time and try again later.
+
+    - Data availability: 1999–2020 (for DMP v2 product).
+
+    - **Scale factor**:
+        - DMP values are stored as integers (Digital Numbers, DN).
+        - Conversion to physical values (kg/ha/day) is done as:  
+        `PV = DN × 0.01`
+        - To represent dekadal productivity (kg/ha/dekad), multiply by **10**:  
+        `PV = DN × 0.01 × 10`
+
+        
+    - The script outputs **clipped, scaled rasters in units of kg/ha/dekad**.
+
+
+    📖 **Product User Manual**:  
+    [Copernicus DMP v2 User Manual](https://land.copernicus.eu/en/technical-library/product-user-manual-dry-and-gross-dry-matter-productivity-version-2/@@download/file)
+
+
 
 ## Download Dekadal DMP Data
 
+This script processes DMP (Dry Matter Productivity) data downloaded from the Copernicus Global Land Service (https://land.copernicus.eu/global/).
 
 ```python
 
@@ -40,7 +64,7 @@ end_year = 2018
 
 
 output_folder = "dmp_1km_v2_10daily"
-geojson_boundary = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/Shapefile/Zambia_L0.geojson" 
+geojson_boundary = "Zambia_L0.geojson" 
 
 
 scale_factor = 0.01
@@ -146,7 +170,6 @@ for year in range(start_year, end_year + 1):
                 date_obj = datetime.strptime(folder, "%Y%m%d")
                 dekad_index = 1 if date_obj.day <= 10 else 2 if date_obj.day <= 20 else 3
                 days_in_dekad = get_dekad_days(date_obj.year, date_obj.month, dekad_index)
-                print("days_in_dekad",days_in_dekad)
 
 
                 # Apply scale factor
@@ -180,7 +203,7 @@ for year in range(start_year, end_year + 1):
 ---
 
 
-## Dekadal to Monthly
+## Aggregate Dekadal GeoTIFFs to Monthly
 
 
 ```python
@@ -212,7 +235,6 @@ for fname in os.listdir(input_folder):
             year_month = date_obj.strftime("%Y-%m")
             files_by_month[year_month].append(os.path.join(input_folder, fname))
             
-# print('files_by_month',files_by_month)
 
 
 # Process each month
@@ -247,12 +269,8 @@ for ym, file_list in sorted(files_by_month.items()):
             # count valid observations
             count_array[valid_mask] += 1
 
-    # === choose SUM or AVERAGE ===
-    # By default: SUM
     monthly_data = sum_array
 
-    # If you want average, uncomment this line:
-    # monthly_data = np.where(count_array > 0, sum_array / count_array, np.nan)
 
     if monthly_data is not None:
         year, month = ym.split("-")
@@ -274,8 +292,7 @@ print("All monthly rasters created successfully!")
 
 ---
 
-
-## Monthly to Annual
+## Aggregate Monthly GeoTIFFs to Annual
 
 
 ```python
@@ -288,12 +305,10 @@ from collections import defaultdict
 from datetime import datetime
 
 # ==== Paths ====
-input_folder = "dmp_1km_v2_monthly"   # now monthly rasters as input
+input_folder = "dmp_1km_v2_monthly"   
 output_folder = "dmp_1km_v2_annual"
 os.makedirs(output_folder, exist_ok=True)
 
-# Regex to extract year and month from monthly filenames
-# Example expected: dmp_2020_01.tif
 date_pattern = re.compile(r".*_(\d{4})_(\d{2})\.tif$")
 
 # Group files by year
@@ -337,12 +352,7 @@ for year, file_list in sorted(files_by_year.items()):
             )
             count_array[valid_mask] += 1
 
-    # === choose SUM or AVERAGE ===
-    # By default: SUM across months
     annual_data = sum_array
-
-    # If you want average annual raster (mean of 12 months):
-    # annual_data = np.where(count_array > 0, sum_array / count_array, np.nan)
 
     if annual_data is not None:
         output_path = os.path.join(output_folder, f"dmp_{year}.tif")

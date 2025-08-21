@@ -18,7 +18,7 @@ models.
 - **Source**: [https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/](https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/)
 - **Format**: GeoTIFF
 - **Extent**: Global
-- **Data Availability**: v5 - 2003-2022  ; v6 = 2013 - 2024 ; v61 = 2013 - Present
+- **Data Availability**: v5 = 2003-2022  ; v6 = 2013 - 2024 ; v61 = 2013 - Present
 - **Spatial Resolution**: 1000m
 - **Temporal Resolution**: Monthly and Annual
 
@@ -37,11 +37,11 @@ from osgeo import gdal
 firstyear = 2018
 lastyear = 2020
 
-output_folder = "ssebop_etav61_monthly"   
-geojson_boundary = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/Shapefile/Zambia_L0.geojson" 
+output_folder = "ssebop_eta_monthly"   
+geojson_boundary = "Zambia_L0.geojson" 
 
 version='v5'
-# Available: 
+# Available versions:  
 # v5 = 2003 - 2022
 # v6 = 2013 - 2024
 # v61 = 2013 - Present
@@ -128,8 +128,8 @@ from osgeo import gdal
 firstyear = 2013
 lastyear = 2022
 
-output_folder = "ssebop_etav61_annual"   
-geojson_boundary = "/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/Shapefile/Zambia_L0.geojson" 
+output_folder = "ssebop_eta_annual"   
+geojson_boundary = "Zambia_L0.geojson" 
 
 version='v61'
 # Available: 
@@ -148,13 +148,13 @@ for year in range(firstyear, lastyear+1):
         out_filename = f"ssebop_eta_{year}.tif"
 
         if version=='v5':
-            url = f"https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/monthly/etav5/downloads/{filename}"
+            url = f"https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/yearly/etav5/downloads/{filename}"
         elif version=='v6':
-            url = f"https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/monthly/etav6/downloads/monthly/{filename}"
+            url = f"https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/yearly/etav6/downloads/yearly/{filename}"
         elif version=='v61':
-            url = f"https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/monthly/etav61/downloads/monthly/{filename}"
+            url = f"https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/yearly/etav61/downloads/yearly/{filename}"
 
-                
+            
         zip_path = os.path.join(output_folder, filename)
 
         print(f"Downloading {filename} from {url} ...")
@@ -200,6 +200,7 @@ for year in range(firstyear, lastyear+1):
 
         except requests.exceptions.RequestException as e:
             print(f"Failed to download {out_filename}: {e}")
+
 
 
 
