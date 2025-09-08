@@ -67,7 +67,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -125,7 +125,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
@@ -135,7 +135,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
@@ -524,18 +524,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dekadal-to-monthly" class="md-nav__link">
+  <a href="#aggregate-dekadal-geotiffs-to-monthly" class="md-nav__link">
     <span class="md-ellipsis">
-      Dekadal to Monthly
+      Aggregate Dekadal GeoTIFFs to Monthly
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#monthly-to-annual" class="md-nav__link">
+  <a href="#aggregate-monthly-geotiffs-to-annual" class="md-nav__link">
     <span class="md-ellipsis">
-      Monthly to Annual
+      Aggregate Monthly GeoTIFFs to Annual
     </span>
   </a>
   
@@ -602,18 +602,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dekadal-to-monthly" class="md-nav__link">
+  <a href="#aggregate-dekadal-geotiffs-to-monthly" class="md-nav__link">
     <span class="md-ellipsis">
-      Dekadal to Monthly
+      Aggregate Dekadal GeoTIFFs to Monthly
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#monthly-to-annual" class="md-nav__link">
+  <a href="#aggregate-monthly-geotiffs-to-annual" class="md-nav__link">
     <span class="md-ellipsis">
-      Monthly to Annual
+      Aggregate Monthly GeoTIFFs to Annual
     </span>
   </a>
   
@@ -639,7 +639,7 @@
 
 
 <h1 id="dry-matter-productivity-dmp">Dry Matter Productivity (DMP)</h1>
-<p>Represents the overall growth rate or dry biomass increase of the vegetation and is directly related to ecosystem Net Primary Production (NPP), however with units customized for agro-statistical purposes (kg/ha/day). Every 10-days estimates are available at global scale in the spatial resolution of about 1km and with the temporal extent from 1999 to June 2020.</p>
+<p>DMP Represents the overall growth rate or dry biomass increase of the vegetation and is directly related to ecosystem Net Primary Production (NPP), however with units customized for agro-statistical purposes (kg/ha/day). Every 10-days estimates are available at global scale in the spatial resolution of about 1km and with the temporal extent from 1999 to June 2020.</p>
 <hr />
 <h2 id="dataset-overview">Dataset Overview</h2>
 <ul>
@@ -652,7 +652,34 @@
 <li><strong>Temporal Resolution</strong>: 10-daily</li>
 </ul>
 <hr />
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>If you encounter errors like <strong>"Too Many Requests"</strong> or connection issues 
+while running the script, it usually means the <strong>Copernicus server</strong> is 
+throttling requests. Please wait for some time and try again later.</p>
+<ul>
+<li>
+<p>Data availability: 1999–2020 (for DMP v2 product).</p>
+</li>
+<li>
+<p><strong>Scale factor</strong>:</p>
+<ul>
+<li>DMP values are stored as integers (Digital Numbers, DN).</li>
+<li>Conversion to physical values (kg/ha/day) is done as:<br />
+<code>PV = DN × 0.01</code></li>
+<li>To represent dekadal productivity (kg/ha/dekad), multiply by <strong>10</strong>:<br />
+<code>PV = DN × 0.01 × 10</code></li>
+</ul>
+</li>
+<li>
+<p>The script outputs <strong>clipped, scaled rasters in units of kg/ha/dekad</strong>.</p>
+</li>
+</ul>
+<p>📖 <strong>Product User Manual</strong>:<br />
+<a href="https://land.copernicus.eu/en/technical-library/product-user-manual-dry-and-gross-dry-matter-productivity-version-2/@@download/file">Copernicus DMP v2 User Manual</a></p>
+</div>
 <h2 id="download-dekadal-dmp-data">Download Dekadal DMP Data</h2>
+<p>This script processes DMP (Dry Matter Productivity) data downloaded from the Copernicus Global Land Service (https://land.copernicus.eu/global/).</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -670,7 +697,7 @@
 
 
 <span class="n">output_folder</span> <span class="o">=</span> <span class="s2">&quot;dmp_1km_v2_10daily&quot;</span>
-<span class="n">geojson_boundary</span> <span class="o">=</span> <span class="s2">&quot;/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/Shapefile/Zambia_L0.geojson&quot;</span> 
+<span class="n">geojson_boundary</span> <span class="o">=</span> <span class="s2">&quot;Zambia_L0.geojson&quot;</span> 
 
 
 <span class="n">scale_factor</span> <span class="o">=</span> <span class="mf">0.01</span>
@@ -776,7 +803,6 @@
                 <span class="n">date_obj</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
                 <span class="n">dekad_index</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">date_obj</span><span class="o">.</span><span class="n">day</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="k">else</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">date_obj</span><span class="o">.</span><span class="n">day</span> <span class="o">&lt;=</span> <span class="mi">20</span> <span class="k">else</span> <span class="mi">3</span>
                 <span class="n">days_in_dekad</span> <span class="o">=</span> <span class="n">get_dekad_days</span><span class="p">(</span><span class="n">date_obj</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">date_obj</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">dekad_index</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;days_in_dekad&quot;</span><span class="p">,</span><span class="n">days_in_dekad</span><span class="p">)</span>
 
 
                 <span class="c1"># Apply scale factor</span>
@@ -802,7 +828,7 @@
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚠️ No DMP-RTx file found in </span><span class="si">{</span><span class="n">folder_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h2 id="dekadal-to-monthly">Dekadal to Monthly</h2>
+<h2 id="aggregate-dekadal-geotiffs-to-monthly">Aggregate Dekadal GeoTIFFs to Monthly</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>
@@ -831,7 +857,6 @@
             <span class="n">year_month</span> <span class="o">=</span> <span class="n">date_obj</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m&quot;</span><span class="p">)</span>
             <span class="n">files_by_month</span><span class="p">[</span><span class="n">year_month</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_folder</span><span class="p">,</span> <span class="n">fname</span><span class="p">))</span>
 
-<span class="c1"># print(&#39;files_by_month&#39;,files_by_month)</span>
 
 
 <span class="c1"># Process each month</span>
@@ -866,12 +891,8 @@
             <span class="c1"># count valid observations</span>
             <span class="n">count_array</span><span class="p">[</span><span class="n">valid_mask</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="c1"># === choose SUM or AVERAGE ===</span>
-    <span class="c1"># By default: SUM</span>
     <span class="n">monthly_data</span> <span class="o">=</span> <span class="n">sum_array</span>
 
-    <span class="c1"># If you want average, uncomment this line:</span>
-    <span class="c1"># monthly_data = np.where(count_array &gt; 0, sum_array / count_array, np.nan)</span>
 
     <span class="k">if</span> <span class="n">monthly_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">year</span><span class="p">,</span> <span class="n">month</span> <span class="o">=</span> <span class="n">ym</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
@@ -887,7 +908,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All monthly rasters created successfully!&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h2 id="monthly-to-annual">Monthly to Annual</h2>
+<h2 id="aggregate-monthly-geotiffs-to-annual">Aggregate Monthly GeoTIFFs to Annual</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>
@@ -896,12 +917,10 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="c1"># ==== Paths ====</span>
-<span class="n">input_folder</span> <span class="o">=</span> <span class="s2">&quot;dmp_1km_v2_monthly&quot;</span>   <span class="c1"># now monthly rasters as input</span>
+<span class="n">input_folder</span> <span class="o">=</span> <span class="s2">&quot;dmp_1km_v2_monthly&quot;</span>   
 <span class="n">output_folder</span> <span class="o">=</span> <span class="s2">&quot;dmp_1km_v2_annual&quot;</span>
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="c1"># Regex to extract year and month from monthly filenames</span>
-<span class="c1"># Example expected: dmp_2020_01.tif</span>
 <span class="n">date_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;.*_(\d</span><span class="si">{4}</span><span class="s2">)_(\d</span><span class="si">{2}</span><span class="s2">)\.tif$&quot;</span><span class="p">)</span>
 
 <span class="c1"># Group files by year</span>
@@ -945,12 +964,7 @@
             <span class="p">)</span>
             <span class="n">count_array</span><span class="p">[</span><span class="n">valid_mask</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="c1"># === choose SUM or AVERAGE ===</span>
-    <span class="c1"># By default: SUM across months</span>
     <span class="n">annual_data</span> <span class="o">=</span> <span class="n">sum_array</span>
-
-    <span class="c1"># If you want average annual raster (mean of 12 months):</span>
-    <span class="c1"># annual_data = np.where(count_array &gt; 0, sum_array / count_array, np.nan)</span>
 
     <span class="k">if</span> <span class="n">annual_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;dmp_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">.tif&quot;</span><span class="p">)</span>

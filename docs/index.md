@@ -6,7 +6,7 @@ Data4WA (Data for Water Accounting) is a technical documentation that guides you
 
 ---
 
-## Developed By
+## 📌 Author  
 
 - [**Aman Chaudhary**](https://www.linkedin.com/in/amanchry/) – [amanchaudhary.web@gmail.com](mailto:amanchaudhary.web@gmail.com)
 
