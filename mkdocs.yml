@@ -14,7 +14,7 @@ theme:
     - navigation.top
     - search.highlight
     # - navigation.sections
-    - navigation.expand
+    # - navigation.expand
     - content.code.copy
   # logo: assets/logo.png
   # favicon: assets/logo.ico
@@ -50,12 +50,45 @@ nav:
   - Introduction: index.md
   - Environment Setup: setup.md
   - Download Datasets:
-    - Precipitation (IMD): datasets/pcp_imd.md
-    - Precipitation (CHIRPS): datasets/pcp_chirps.md
-    - Evapotranspiration (WaPOR): datasets/eta_wapor.md
-    - Evapotranspiration (SSEBop): datasets/eta_ssebop.md
-    - Reference Evapotranspiration (WaPOR): datasets/ret_wapor.md
-    - Biomass Production (WaPOR): datasets/tbp_wapor.md
-    - Dry Matter Productivity (Copernicus): datasets/dmp_copernicus.md
+    - Evapotranspiration: 
+      - WaPOR v3: datasets/eta_wapor3.md
+      - SSEBop: datasets/eta_ssebop.md
+    - Precipitation:
+      - CHIRPS: datasets/pcp_chirps.md
+      - ERA5: datasets/pcp_era5.md
+      - GSMap: datasets/pcp_gsmap.md
+      - GPM: datasets/pcp_gpm.md
+      - PERSIANN: datasets/pcp_persiann.md
+      - IMD: datasets/pcp_imd.md
+    - Reference Evapotranspiration: 
+      - WaPOR v3: datasets/ret_wapor3.md
+    - Biomass Production:
+      - WaPOR v3: datasets/tbp_wapor3.md
+      - Copernicus: datasets/dmp_copernicus.md
+
+    - Gross biomass water productivity: 
+      - WaPOR v3: datasets/gbwp_wapor3.md
+    - LULC:
+      - ESA: datasets/lulc_esa.md
+      - WaPOR v2: datasets/lulc_wapor2.md
+    - Elevation: 
+      - AW3D30: datasets/elevation_alos.md
+    
+  - Zonal Stats:
+    - Continous Raster: zonalstats/1_zonalstats_continuous_raster.md
+    - LULC Pixel Count: zonalstats/2_LULC_class_pixelCount.md
+    - Zonalsstats over cropland area: zonalstats/3_zonalstats_over_cropland.md
+    - Zonalstats over Each LULC Class: zonalstats/4_zonalstats_over_each_LULC.md
+    - SPEI Stats: zonalstats/5_spei_zonalStats.md
+
+  - Other Scripts:
+    - monthly_raster_to_annual: other_scripts/monthly_raster_to_annual.md
+    - clip_raster_to_boundary: other_scripts/clip_rasters_to_boundary.md
+    - get_raster_pixel_area: other_scripts/get_raster_pixel_area.md
+    - compute_mean_raster: other_scripts/compute_mean_raster.md
+    - netcdf_to_geotiff: other_scripts/netcdf_to_geotiff.md
+    - geotiff_compress: other_scripts/geotif_compress.md
+    - geotiff_cogs: other_scripts/geotif_cogs.md
+
 
     

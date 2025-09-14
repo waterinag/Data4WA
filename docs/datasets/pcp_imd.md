@@ -145,7 +145,7 @@ for year in range(firstyear, lastyear + 1):
 
 ## Aggregate Daily GeoTIFFs to Monthly
 
-This script uses `rasterio` and `numpy` to aggregate daily rasters into **monthly precipitation maps** by summing values.
+This script aggregate daily rasters into monthly precipitation maps by summing values.
 
 ```python
 # pcp_imd_monthly.py

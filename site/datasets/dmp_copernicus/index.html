@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
@@ -515,9 +515,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-dekadal-dmp-data" class="md-nav__link">
+  <a href="#download-dekadal-dmp-1km-v2-1999-2020-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Download Dekadal DMP Data
+      Download Dekadal DMP (1km) (v2: 1999-2020) Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-dekadal-dmp-300m-v1-2014-present-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download Dekadal DMP (300m) (v1: 2014-present) Data
     </span>
   </a>
   
@@ -593,9 +602,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-dekadal-dmp-data" class="md-nav__link">
+  <a href="#download-dekadal-dmp-1km-v2-1999-2020-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Download Dekadal DMP Data
+      Download Dekadal DMP (1km) (v2: 1999-2020) Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-dekadal-dmp-300m-v1-2014-present-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download Dekadal DMP (300m) (v1: 2014-present) Data
     </span>
   </a>
   
@@ -678,8 +696,8 @@ throttling requests. Please wait for some time and try again later.</p>
 <p>📖 <strong>Product User Manual</strong>:<br />
 <a href="https://land.copernicus.eu/en/technical-library/product-user-manual-dry-and-gross-dry-matter-productivity-version-2/@@download/file">Copernicus DMP v2 User Manual</a></p>
 </div>
-<h2 id="download-dekadal-dmp-data">Download Dekadal DMP Data</h2>
-<p>This script processes DMP (Dry Matter Productivity) data downloaded from the Copernicus Global Land Service (https://land.copernicus.eu/global/).</p>
+<h2 id="download-dekadal-dmp-1km-v2-1999-2020-data">Download Dekadal DMP (1km) (v2: 1999-2020) Data</h2>
+<p>This script processes DMP (Dry Matter Productivity) v2 (spatial resolution 1km) data downloaded from the Copernicus Global Land Service (https://land.copernicus.eu/global/).</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -689,6 +707,7 @@ throttling requests. Please wait for some time and try again later.</p>
 <span class="kn">from</span><span class="w"> </span><span class="nn">osgeo</span><span class="w"> </span><span class="kn">import</span> <span class="n">gdal</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">calendar</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="c1"># Data Available 1999-2020</span>
 
@@ -823,6 +842,159 @@ throttling requests. Please wait for some time and try again later.</p>
 
             <span class="c1"># Preprocessing </span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Saved: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="c1"># increase this time if needed; If you still get throttled, increase to 30–60 seconds.</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚠️ No DMP-RTx file found in </span><span class="si">{</span><span class="n">folder_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="download-dekadal-dmp-300m-v1-2014-present-data">Download Dekadal DMP (300m) (v1: 2014-present) Data</h2>
+<p>This script processes DMP (Dry Matter Productivity) v1 (spatial resolution 300m) data downloaded from the Copernicus Global Land Service (https://land.copernicus.eu/global/).</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">osgeo</span><span class="w"> </span><span class="kn">import</span> <span class="n">gdal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">calendar</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="c1"># Data Available 2014-present</span>
+
+<span class="n">start_year</span> <span class="o">=</span> <span class="mi">2018</span>
+<span class="n">end_year</span> <span class="o">=</span> <span class="mi">2018</span>
+
+
+<span class="n">output_folder</span> <span class="o">=</span> <span class="s2">&quot;dmp_300m_v1_10daily&quot;</span>
+<span class="n">geojson_boundary</span> <span class="o">=</span> <span class="s2">&quot;/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/Shapefile/Zambia_L0.geojson&quot;</span> 
+
+
+<span class="n">scale_factor</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+
+<span class="c1"># scale_factor = 0.01 for DMP; use 0.02 if working with GDMP</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_dekad_days</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">dekad_index</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the number of days in a given dekad.</span>
+<span class="sd">    dekad_index = 1, 2, or 3</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">dekad_index</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">10</span>
+    <span class="k">elif</span> <span class="n">dekad_index</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">10</span>
+    <span class="k">elif</span> <span class="n">dekad_index</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">calendar</span><span class="o">.</span><span class="n">monthrange</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">20</span>  <span class="c1"># remaining days</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Dekad index must be 1, 2, or 3&quot;</span><span class="p">)</span>
+
+
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">rt_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;DMP-RT(\d+)&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_year</span><span class="p">,</span> <span class="n">end_year</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">year_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://globalland.vito.be/download/geotiff/dry_matter_productivity/dmp_300m_v1_10daily/</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">/&quot;</span>
+
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📅 Year: </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🔍 Fetching index: </span><span class="si">{</span><span class="n">year_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">year_url</span><span class="p">)</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Failed to fetch index for </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">continue</span>
+
+    <span class="c1"># Parse folder names like 20140110, 20140120...</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+    <span class="n">folders</span> <span class="o">=</span> <span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;href&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span> <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;href&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">))]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📁 Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">folders</span><span class="p">)</span><span class="si">}</span><span class="s2"> decadal folders&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">folders</span><span class="p">:</span>
+        <span class="n">folder_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">year_url</span><span class="si">}{</span><span class="n">folder</span><span class="si">}</span><span class="s2">/&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">sub_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">folder_url</span><span class="p">)</span>
+            <span class="n">sub_response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Failed to fetch subfolder </span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="n">sub_soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">sub_response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+        <span class="n">file_links</span> <span class="o">=</span> <span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;href&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">sub_soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;href&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.tiff&quot;</span><span class="p">)]</span>
+
+
+        <span class="c1"># Filter only DMP-RTx (exclude QFLAGs)</span>
+        <span class="n">rt_files</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">file_links</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;DMP-RT&quot;</span> <span class="ow">in</span> <span class="n">f</span> <span class="ow">and</span> <span class="s2">&quot;QFLAG&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">match</span> <span class="o">=</span> <span class="n">rt_pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+                    <span class="n">rt_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+                    <span class="n">rt_files</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">rt_num</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span>
+
+
+        <span class="k">if</span> <span class="n">rt_files</span><span class="p">:</span>
+            <span class="c1"># Select file with highest RTx version</span>
+            <span class="n">selected_file</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">rt_files</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">file_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">folder_url</span><span class="si">}{</span><span class="n">selected_file</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">clipped_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;clipped_</span><span class="si">{</span><span class="n">selected_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">selected_file</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_path</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Already exists: </span><span class="si">{</span><span class="n">selected_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⬇️  Downloading: </span><span class="si">{</span><span class="n">file_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">vsicurl_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/vsicurl/</span><span class="si">{</span><span class="n">file_url</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+            <span class="c1"># Cliping for GeoJSON Boundary</span>
+            <span class="n">warp_options</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">WarpOptions</span><span class="p">(</span>
+                <span class="n">cutlineDSName</span><span class="o">=</span><span class="n">geojson_boundary</span><span class="p">,</span>
+                <span class="n">cropToCutline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">dstNodata</span><span class="o">=-</span><span class="mi">9999</span>
+                <span class="p">)</span>
+            <span class="n">gdal</span><span class="o">.</span><span class="n">Warp</span><span class="p">(</span><span class="n">destNameOrDestDS</span><span class="o">=</span><span class="n">clipped_file</span><span class="p">,</span> <span class="n">srcDSOrSrcDSTab</span><span class="o">=</span><span class="n">vsicurl_url</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">warp_options</span><span class="p">)</span>
+
+
+            <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">clipped_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
+                <span class="n">arr</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+                <span class="n">profile</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+                <span class="c1"># Replace invalid values with NaN</span>
+                <span class="n">arr</span><span class="p">[(</span><span class="n">arr</span> <span class="o">&gt;=</span> <span class="mi">32767</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">arr</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+                <span class="n">date_obj</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">dekad_index</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">date_obj</span><span class="o">.</span><span class="n">day</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="k">else</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">date_obj</span><span class="o">.</span><span class="n">day</span> <span class="o">&lt;=</span> <span class="mi">20</span> <span class="k">else</span> <span class="mi">3</span>
+                <span class="n">days_in_dekad</span> <span class="o">=</span> <span class="n">get_dekad_days</span><span class="p">(</span><span class="n">date_obj</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">date_obj</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">dekad_index</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;days_in_dekad&quot;</span><span class="p">,</span><span class="n">days_in_dekad</span><span class="p">)</span>
+
+
+                <span class="c1"># Apply scale factor</span>
+                <span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span> <span class="o">*</span> <span class="n">scale_factor</span> <span class="o">*</span> <span class="n">days_in_dekad</span>
+
+                <span class="c1"># Convert NaN to -9999 nodata</span>
+                <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">arr</span><span class="p">),</span> <span class="o">-</span><span class="mi">9999</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+                <span class="c1"># Update profile for new raster</span>
+                <span class="n">profile</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">rasterio</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=-</span><span class="mi">9999</span><span class="p">,</span> <span class="n">compress</span><span class="o">=</span><span class="s2">&quot;lzw&quot;</span><span class="p">)</span>
+
+                <span class="c1"># Write NEW GeoTIFF</span>
+                <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">profile</span><span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
+                    <span class="n">dst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">clipped_file</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">clipped_file</span><span class="p">)</span>
+
+            <span class="c1"># Preprocessing </span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Saved: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="c1"># increase this time if needed; If you still get throttled, increase to 30–60 seconds.</span>
 
         <span class="k">else</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚠️ No DMP-RTx file found in </span><span class="si">{</span><span class="n">folder_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1023,7 +1195,8 @@ throttling requests. Please wait for some time and try again later.</p>
   
 </div>
       
-        <div class="md-social">
+        
+<div class="md-social">
   
     
     

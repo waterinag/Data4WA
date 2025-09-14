@@ -63,7 +63,7 @@ gdalinfo --version
 Then install required Python libraries:
 
 ```bash
-pip install pandas tqdm geopandas numpy xarray rioxarray rasterio netCDF4 requests beautifulsoup4
+pip install pandas tqdm geopandas numpy xarray rioxarray rasterio netCDF4 requests beautifulsoup4  earthengine-api geemap planetary-computer pystac-client
 ```
 
 
