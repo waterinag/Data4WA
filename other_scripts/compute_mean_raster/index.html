@@ -12,13 +12,13 @@
         <meta name="author" content="waterinag">
       
       
-        <link rel="canonical" href="https://waterinag.github.io/Data4WA/datasets/eta_ssebop/">
+        <link rel="canonical" href="https://waterinag.github.io/Data4WA/other_scripts/compute_mean_raster/">
       
       
-        <link rel="prev" href="../eta_wapor3/">
+        <link rel="prev" href="../get_raster_pixel_area/">
       
       
-        <link rel="next" href="../pcp_chirps/">
+        <link rel="next" href="../netcdf_to_geotiff/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>SSEBop - Data4WA</title>
+        <title>compute_mean_raster - Data4WA</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#evapotranspiration-ssebop" class="md-skip">
+        <a href="#compute-multi-temporal-mean-raster" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SSEBop
+              compute_mean_raster
             
           </span>
         </div>
@@ -277,20 +277,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -306,7 +304,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Download Datasets
@@ -317,20 +315,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -346,7 +342,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Evapotranspiration
@@ -360,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../eta_wapor3/" class="md-nav__link">
+      <a href="../../datasets/eta_wapor3/" class="md-nav__link">
         
   
   
@@ -380,32 +376,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    SSEBop
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../datasets/eta_ssebop/" class="md-nav__link">
         
   
   
@@ -416,44 +390,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dataset-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dataset Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-ssebop-eta" class="md-nav__link">
-    <span class="md-ellipsis">
-      Download SSEBop ETa
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -512,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcp_chirps/" class="md-nav__link">
+      <a href="../../datasets/pcp_chirps/" class="md-nav__link">
         
   
   
@@ -535,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcp_era5/" class="md-nav__link">
+      <a href="../../datasets/pcp_era5/" class="md-nav__link">
         
   
   
@@ -558,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcp_gsmap/" class="md-nav__link">
+      <a href="../../datasets/pcp_gsmap/" class="md-nav__link">
         
   
   
@@ -581,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcp_gpm/" class="md-nav__link">
+      <a href="../../datasets/pcp_gpm/" class="md-nav__link">
         
   
   
@@ -604,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcp_persiann/" class="md-nav__link">
+      <a href="../../datasets/pcp_persiann/" class="md-nav__link">
         
   
   
@@ -627,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pcp_imd/" class="md-nav__link">
+      <a href="../../datasets/pcp_imd/" class="md-nav__link">
         
   
   
@@ -696,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ret_wapor3/" class="md-nav__link">
+      <a href="../../datasets/ret_wapor3/" class="md-nav__link">
         
   
   
@@ -765,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tbp_wapor3/" class="md-nav__link">
+      <a href="../../datasets/tbp_wapor3/" class="md-nav__link">
         
   
   
@@ -788,7 +724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dmp_copernicus/" class="md-nav__link">
+      <a href="../../datasets/dmp_copernicus/" class="md-nav__link">
         
   
   
@@ -857,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gbwp_wapor3/" class="md-nav__link">
+      <a href="../../datasets/gbwp_wapor3/" class="md-nav__link">
         
   
   
@@ -926,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lulc_esa/" class="md-nav__link">
+      <a href="../../datasets/lulc_esa/" class="md-nav__link">
         
   
   
@@ -949,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lulc_wapor2/" class="md-nav__link">
+      <a href="../../datasets/lulc_wapor2/" class="md-nav__link">
         
   
   
@@ -1018,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../elevation_alos/" class="md-nav__link">
+      <a href="../../datasets/elevation_alos/" class="md-nav__link">
         
   
   
@@ -1213,18 +1149,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1240,7 +1178,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Other Scripts
@@ -1254,7 +1192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other_scripts/monthly_raster_to_annual/" class="md-nav__link">
+      <a href="../monthly_raster_to_annual/" class="md-nav__link">
         
   
   
@@ -1277,7 +1215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other_scripts/clip_rasters_to_boundary/" class="md-nav__link">
+      <a href="../clip_rasters_to_boundary/" class="md-nav__link">
         
   
   
@@ -1300,7 +1238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other_scripts/get_raster_pixel_area/" class="md-nav__link">
+      <a href="../get_raster_pixel_area/" class="md-nav__link">
         
   
   
@@ -1320,10 +1258,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../other_scripts/compute_mean_raster/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1334,6 +1281,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1346,7 +1294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other_scripts/netcdf_to_geotiff/" class="md-nav__link">
+      <a href="../netcdf_to_geotiff/" class="md-nav__link">
         
   
   
@@ -1369,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other_scripts/geotif_compress/" class="md-nav__link">
+      <a href="../geotif_compress/" class="md-nav__link">
         
   
   
@@ -1392,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../other_scripts/geotif_cogs/" class="md-nav__link">
+      <a href="../geotif_cogs/" class="md-nav__link">
         
   
   
@@ -1435,32 +1383,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dataset-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dataset Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-ssebop-eta" class="md-nav__link">
-    <span class="md-ellipsis">
-      Download SSEBop ETa
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1478,137 +1400,71 @@
   
 
 
-<h1 id="evapotranspiration-ssebop">Evapotranspiration (SSEBop)</h1>
-<p>Actual ET (ETa) is produced using the operational Simplified Surface Energy Balance
-(SSEBop) model (Senay et al., 2012) for the period 2000 to present. The SSEBop setup is
-based on the Simplified Surface Energy Balance (SSEB) approach (Senay et al., 2011, 2013)
-with unique parameterization for operational applications. It combines ET fractions generated
-from remotely sensed MODIS thermal imagery, acquired every 8 days, with reference ET using
-a thermal index approach. The unique feature of the SSEBop parameterization is that it uses
-pre-defined, seasonally dynamic, boundary conditions that are unique to each pixel for the
-“hot/dry” and “cold/wet” reference points. The original formulation of SSEB is based on the hot
-and cold pixel principles of SEBAL (Bastiaanssen et al., 1998) and METRIC (Allen et al., 2007)
-models.</p>
+<h1 id="compute-multi-temporal-mean-raster">Compute Multi-Temporal Mean Raster</h1>
+<p>This script calculates the multi-year mean from a stack of annual raster files. It reads all GeoTIFFs in a folder, handles nodata values, and processes the rasters block by block to avoid memory issues with large datasets. The result is a single GeoTIFF representing the average across all input years.</p>
 <hr />
-<h2 id="dataset-overview">Dataset Overview</h2>
-<ul>
-<li><strong>Product</strong>: USGS</li>
-<li><strong>Source</strong>: <a href="https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/">https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/</a></li>
-<li><strong>Format</strong>: GeoTIFF</li>
-<li><strong>Extent</strong>: Global</li>
-<li><strong>Data Availability</strong>: v5 = 2003-2022  ; v6 = 2013 - 2024 ; v61 = 2013 - Present</li>
-<li><strong>Spatial Resolution</strong>: 1000m</li>
-<li><strong>Temporal Resolution</strong>: Monthly and Annual</li>
-</ul>
-<hr />
-<h2 id="download-ssebop-eta">Download SSEBop ETa</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">zipfile</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">osgeo</span><span class="w"> </span><span class="kn">import</span> <span class="n">gdal</span>
 
-<span class="n">first_year</span> <span class="o">=</span> <span class="mi">2018</span>
-<span class="n">last_year</span> <span class="o">=</span> <span class="mi">2019</span>
+<span class="c1"># Input and output paths</span>
+<span class="n">raster_folder</span> <span class="o">=</span> <span class="s1">&#39;WaPOR_v3_AETI_Annual&#39;</span>
+<span class="n">mean_raster_path</span> <span class="o">=</span> <span class="s1">&#39;WaPOR_v3_AETI_Mean_2018_24.tif&#39;</span>
 
-<span class="n">version</span><span class="o">=</span><span class="s1">&#39;v61&#39;</span>
-<span class="c1"># Available: </span>
-<span class="c1"># v5 = 2003 - 2022</span>
-<span class="c1"># v6 = 2013 - 2024</span>
-<span class="c1"># v61 = 2013 - Present</span>
+<span class="c1"># List input rasters</span>
+<span class="n">file_paths</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">raster_folder</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">raster_folder</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">f</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;._&#39;</span><span class="p">)</span>
+<span class="p">]</span>
 
-<span class="n">temporal_resolution</span><span class="o">=</span><span class="s2">&quot;Annual&quot;</span> <span class="c1"># Annual OR Monthly </span>
-<span class="n">output_folder_path</span> <span class="o">=</span> <span class="s2">&quot;/Users/amanchaudhary/Documents/Resources/World_Bank/Jordan&quot;</span>   
-<span class="n">geojson_boundary</span> <span class="o">=</span> <span class="s2">&quot;/Users/amanchaudhary/Documents/Resources/World_Bank/Jordan/Shapefile/Jordan_L0.geojson&quot;</span> 
+<span class="n">file_paths</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>  <span class="c1"># optional, for consistent order</span>
 
+<span class="c1"># Open first raster for shape</span>
+<span class="n">ds0</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">file_paths</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">RasterXSize</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">RasterYSize</span>
+<span class="n">band_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">file_paths</span><span class="p">)</span>
+<span class="n">gt</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">GetGeoTransform</span><span class="p">()</span>
+<span class="n">proj</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">GetProjection</span><span class="p">()</span>
+<span class="n">nodata</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">GetNoDataValue</span><span class="p">()</span>
+<span class="n">ds0</span> <span class="o">=</span> <span class="kc">None</span>
 
-<span class="n">output_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;ssebop_ETa_</span><span class="si">{</span><span class="n">version</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">temporal_resolution</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+<span class="c1"># Create output raster</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s1">&#39;GTiff&#39;</span><span class="p">)</span>
+<span class="n">out_ds</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="n">mean_raster_path</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float32</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;COMPRESS=DEFLATE&#39;</span><span class="p">])</span>
+<span class="n">out_ds</span><span class="o">.</span><span class="n">SetGeoTransform</span><span class="p">(</span><span class="n">gt</span><span class="p">)</span>
+<span class="n">out_ds</span><span class="o">.</span><span class="n">SetProjection</span><span class="p">(</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">out_band</span> <span class="o">=</span> <span class="n">out_ds</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">out_band</span><span class="o">.</span><span class="n">SetNoDataValue</span><span class="p">(</span><span class="o">-</span><span class="mi">9999</span><span class="p">)</span>
 
+<span class="c1"># Process block by block</span>
+<span class="n">block_size</span> <span class="o">=</span> <span class="mi">512</span>
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">block_size</span><span class="p">):</span>
+    <span class="n">ysize</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">block_size</span><span class="p">,</span> <span class="n">rows</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">block_size</span><span class="p">):</span>
+        <span class="n">xsize</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">block_size</span><span class="p">,</span> <span class="n">cols</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+        <span class="n">block_stack</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">fpath</span> <span class="ow">in</span> <span class="n">file_paths</span><span class="p">:</span>
+            <span class="n">ds</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">xsize</span><span class="p">,</span> <span class="n">ysize</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+            <span class="n">ds</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">nodata</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">==</span> <span class="n">nodata</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="n">block_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
+        <span class="n">block_stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">block_stack</span><span class="p">)</span>
+        <span class="n">block_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">block_stack</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
+        <span class="n">block_mean</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">block_mean</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span>
+        <span class="n">out_band</span><span class="o">.</span><span class="n">WriteArray</span><span class="p">(</span><span class="n">block_mean</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
-<span class="n">filenames</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">if</span> <span class="n">temporal_resolution</span> <span class="o">==</span> <span class="s2">&quot;Annual&quot;</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">first_year</span><span class="p">,</span> <span class="n">last_year</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;y</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">.zip&quot;</span>
-        <span class="k">if</span> <span class="n">version</span><span class="o">==</span><span class="s1">&#39;v5&#39;</span><span class="p">:</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/yearly/etav5/downloads/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="k">elif</span> <span class="n">version</span><span class="o">==</span><span class="s1">&#39;v6&#39;</span><span class="p">:</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/yearly/etav6/downloads/yearly/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="k">elif</span> <span class="n">version</span><span class="o">==</span><span class="s1">&#39;v61&#39;</span><span class="p">:</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/yearly/etav61/downloads/yearly/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="c1"># Finalize</span>
+<span class="n">out_band</span><span class="o">.</span><span class="n">FlushCache</span><span class="p">()</span>
+<span class="n">out_ds</span> <span class="o">=</span> <span class="kc">None</span>
 
-        <span class="n">output_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;ssebop_eta_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">.tif&quot;</span>
-        <span class="n">filenames</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">url</span><span class="p">,</span><span class="n">filename</span><span class="p">,</span> <span class="n">output_filename</span><span class="p">))</span>
-
-
-<span class="k">elif</span> <span class="n">temporal_resolution</span> <span class="o">==</span> <span class="s2">&quot;Monthly&quot;</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">first_year</span><span class="p">,</span> <span class="n">last_year</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
-            <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;m</span><span class="si">{</span><span class="n">year</span><span class="si">}{</span><span class="n">month</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">.zip&quot;</span>
-            <span class="k">if</span> <span class="n">version</span><span class="o">==</span><span class="s1">&#39;v5&#39;</span><span class="p">:</span>
-                <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/monthly/etav5/downloads/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="k">elif</span> <span class="n">version</span><span class="o">==</span><span class="s1">&#39;v6&#39;</span><span class="p">:</span>
-                <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/monthly/etav6/downloads/monthly/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="k">elif</span> <span class="n">version</span><span class="o">==</span><span class="s1">&#39;v61&#39;</span><span class="p">:</span>
-                <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/monthly/etav61/downloads/monthly/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
-
-            <span class="n">output_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;ssebop_eta_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">month</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">.tif&quot;</span>
-            <span class="n">filenames</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">url</span><span class="p">,</span><span class="n">filename</span><span class="p">,</span> <span class="n">output_filename</span><span class="p">))</span>
-
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;temporal_resolution must be &#39;Annual&#39; or &#39;Monthly&#39;&quot;</span><span class="p">)</span>
-
-<span class="n">total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total files:&quot;</span><span class="p">,</span><span class="n">total</span><span class="p">)</span>
-
-
-
-<span class="k">for</span> <span class="n">url</span><span class="p">,</span><span class="n">filename</span><span class="p">,</span> <span class="n">output_filename</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
-        <span class="n">zip_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloading </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> ...&quot;</span><span class="p">)</span>
-
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">zip_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="mi">8192</span><span class="p">):</span>
-                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
-
-
-            <span class="c1"># Unzip</span>
-            <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">zip_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
-                <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">output_folder</span><span class="p">)</span>
-
-            <span class="c1"># Find the GeoTIFF file (assume one tif per zip)</span>
-            <span class="n">tif_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">zip_ref</span><span class="o">.</span><span class="n">namelist</span><span class="p">()</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.tif&quot;</span><span class="p">)]</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">tif_files</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No .tif found in </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                <span class="k">continue</span>
-
-            <span class="n">tif_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">tif_files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-            <span class="n">out_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">output_filename</span><span class="p">)</span>
-
-            <span class="n">warp_options</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">WarpOptions</span><span class="p">(</span>
-                <span class="n">cutlineDSName</span><span class="o">=</span><span class="n">geojson_boundary</span><span class="p">,</span>
-                <span class="n">cropToCutline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                <span class="n">dstNodata</span><span class="o">=-</span><span class="mi">9999</span><span class="p">,</span>
-
-            <span class="p">)</span>
-            <span class="n">gdal</span><span class="o">.</span><span class="n">Warp</span><span class="p">(</span><span class="n">destNameOrDestDS</span><span class="o">=</span><span class="n">out_path</span><span class="p">,</span> <span class="n">srcDSOrSrcDSTab</span><span class="o">=</span><span class="n">tif_path</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">warp_options</span><span class="p">)</span>
-
-            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">tif_path</span><span class="p">)</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">zip_path</span><span class="p">)</span>
-            <span class="n">xml_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">output_folder</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.xml&quot;</span><span class="p">)]</span>
-            <span class="k">for</span> <span class="n">xf</span> <span class="ow">in</span> <span class="n">xml_files</span><span class="p">:</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">xf</span><span class="p">))</span>
-
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Downloaded </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to download </span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Mean raster created efficiently using GDAL!&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 

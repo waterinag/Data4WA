@@ -12,13 +12,13 @@
         <meta name="author" content="waterinag">
       
       
-        <link rel="canonical" href="https://waterinag.github.io/Data4WA/datasets/eta_ssebop/">
+        <link rel="canonical" href="https://waterinag.github.io/Data4WA/datasets/eta_wapor3/">
       
       
-        <link rel="prev" href="../eta_wapor3/">
+        <link rel="prev" href="../../setup/">
       
       
-        <link rel="next" href="../pcp_chirps/">
+        <link rel="next" href="../eta_ssebop/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>SSEBop - Data4WA</title>
+        <title>WaPOR v3 - Data4WA</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#evapotranspiration-ssebop" class="md-skip">
+        <a href="#actual-evapotranspiration-aeti" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SSEBop
+              WaPOR v3
             
           </span>
         </div>
@@ -357,29 +357,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../eta_wapor3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    WaPOR v3
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -397,7 +374,7 @@
   
   
   <span class="md-ellipsis">
-    SSEBop
+    WaPOR v3
     
   </span>
   
@@ -410,7 +387,7 @@
   
   
   <span class="md-ellipsis">
-    SSEBop
+    WaPOR v3
     
   </span>
   
@@ -442,9 +419,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-ssebop-eta" class="md-nav__link">
+  <a href="#download-wapor-v3-aeti-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Download SSEBop ETa
+      Download WaPOR v3 AETI Data
     </span>
   </a>
   
@@ -454,6 +431,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eta_ssebop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SSEBop
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1451,9 +1451,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-ssebop-eta" class="md-nav__link">
+  <a href="#download-wapor-v3-aeti-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Download SSEBop ETa
+      Download WaPOR v3 AETI Data
     </span>
   </a>
   
@@ -1478,50 +1478,69 @@
   
 
 
-<h1 id="evapotranspiration-ssebop">Evapotranspiration (SSEBop)</h1>
-<p>Actual ET (ETa) is produced using the operational Simplified Surface Energy Balance
-(SSEBop) model (Senay et al., 2012) for the period 2000 to present. The SSEBop setup is
-based on the Simplified Surface Energy Balance (SSEB) approach (Senay et al., 2011, 2013)
-with unique parameterization for operational applications. It combines ET fractions generated
-from remotely sensed MODIS thermal imagery, acquired every 8 days, with reference ET using
-a thermal index approach. The unique feature of the SSEBop parameterization is that it uses
-pre-defined, seasonally dynamic, boundary conditions that are unique to each pixel for the
-“hot/dry” and “cold/wet” reference points. The original formulation of SSEB is based on the hot
-and cold pixel principles of SEBAL (Bastiaanssen et al., 1998) and METRIC (Allen et al., 2007)
-models.</p>
+<h1 id="actual-evapotranspiration-aeti">Actual Evapotranspiration (AETI)</h1>
+<p>Evapotranspiration is the sum of the soil evaporation (E), canopy transpiration (T) and interception (I). 
+The sum of all three parameters i.e. the Actual Evapotranspiration and Interception (AETI) can be used to quantify the agricultural water consumption.
+For further information on the methodology read the WaPOR documentation available at: <a href="https://bitbucket.org/cioapps/wapor-et-look/wiki/Home">https://bitbucket.org/cioapps/wapor-et-look/wiki/Home</a></p>
 <hr />
 <h2 id="dataset-overview">Dataset Overview</h2>
 <ul>
-<li><strong>Product</strong>: USGS</li>
-<li><strong>Source</strong>: <a href="https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/">https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/</a></li>
+<li><strong>Product</strong>: WaPOR v3</li>
+<li><strong>Source</strong>: <a href="https://console.cloud.google.com/storage/browser/fao-gismgr-wapor-3-data/DATA/WAPOR-3/MAPSET">https://console.cloud.google.com/storage/browser/fao-gismgr-wapor-3-data/DATA/WAPOR-3/MAPSET</a></li>
 <li><strong>Format</strong>: GeoTIFF</li>
 <li><strong>Extent</strong>: Global</li>
-<li><strong>Data Availability</strong>: v5 = 2003-2022  ; v6 = 2013 - 2024 ; v61 = 2013 - Present</li>
-<li><strong>Spatial Resolution</strong>: 1000m</li>
+<li><strong>Data Availability</strong>: 2018 – present </li>
+<li><strong>Spatial Resolution</strong>: 300m</li>
 <li><strong>Temporal Resolution</strong>: Monthly and Annual</li>
 </ul>
 <hr />
-<h2 id="download-ssebop-eta">Download SSEBop ETa</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">zipfile</span>
+<h2 id="download-wapor-v3-aeti-data">Download WaPOR v3 AETI Data</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">osgeo</span><span class="w"> </span><span class="kn">import</span> <span class="n">gdal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">shapely.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">box</span>
+
+
+
 
 <span class="n">first_year</span> <span class="o">=</span> <span class="mi">2018</span>
-<span class="n">last_year</span> <span class="o">=</span> <span class="mi">2019</span>
+<span class="n">last_year</span> <span class="o">=</span> <span class="mi">2024</span>
 
-<span class="n">version</span><span class="o">=</span><span class="s1">&#39;v61&#39;</span>
-<span class="c1"># Available: </span>
-<span class="c1"># v5 = 2003 - 2022</span>
-<span class="c1"># v6 = 2013 - 2024</span>
-<span class="c1"># v61 = 2013 - Present</span>
-
+<span class="n">Level</span><span class="o">=</span><span class="s2">&quot;L1&quot;</span> <span class="c1"># L1 (300m) or L2 (100m)</span>
 <span class="n">temporal_resolution</span><span class="o">=</span><span class="s2">&quot;Annual&quot;</span> <span class="c1"># Annual OR Monthly </span>
-<span class="n">output_folder_path</span> <span class="o">=</span> <span class="s2">&quot;/Users/amanchaudhary/Documents/Resources/World_Bank/Jordan&quot;</span>   
-<span class="n">geojson_boundary</span> <span class="o">=</span> <span class="s2">&quot;/Users/amanchaudhary/Documents/Resources/World_Bank/Jordan/Shapefile/Jordan_L0.geojson&quot;</span> 
+<span class="n">output_folder_path</span> <span class="o">=</span> <span class="s2">&quot;/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia&quot;</span>   
+<span class="n">geojson_boundary</span> <span class="o">=</span> <span class="s2">&quot;/Users/amanchaudhary/Documents/Resources/World_Bank/Zambia/Shapefile/Zambia_L0.geojson&quot;</span> 
 
 
-<span class="n">output_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;ssebop_ETa_</span><span class="si">{</span><span class="n">version</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">temporal_resolution</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+
+<span class="n">output_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;WaPOR_v3_</span><span class="si">{</span><span class="n">Level</span><span class="si">}</span><span class="s2">_AETI_</span><span class="si">{</span><span class="n">temporal_resolution</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">check_extent</span><span class="p">(</span><span class="n">geojson_path</span><span class="p">,</span> <span class="n">dataset_extent</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">geojson_path</span><span class="p">)</span>
+        <span class="n">aoi_bounds</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">total_bounds</span>  <span class="c1"># [minx, miny, maxx, maxy]</span>
+
+        <span class="n">dataset_bbox</span> <span class="o">=</span> <span class="n">box</span><span class="p">(</span><span class="o">*</span><span class="n">dataset_extent</span><span class="p">)</span>
+        <span class="n">aoi_bbox</span> <span class="o">=</span> <span class="n">box</span><span class="p">(</span><span class="o">*</span><span class="n">aoi_bounds</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset_bbox</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">aoi_bbox</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;outside&quot;</span><span class="p">,</span> <span class="n">aoi_bounds</span><span class="p">,</span> <span class="n">dataset_extent</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">dataset_bbox</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">aoi_bbox</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;partial&quot;</span><span class="p">,</span> <span class="n">aoi_bounds</span><span class="p">,</span> <span class="n">dataset_extent</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;inside&quot;</span><span class="p">,</span> <span class="n">aoi_bounds</span><span class="p">,</span> <span class="n">dataset_extent</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+<span class="n">L2_extent</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">30.0044643</span><span class="p">,</span> <span class="o">-</span><span class="mf">40.0044644</span><span class="p">,</span> <span class="mf">65.0044644</span><span class="p">,</span> <span class="mf">40.0044643</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">Level</span> <span class="o">==</span> <span class="s2">&quot;L2&quot;</span><span class="p">:</span>
+    <span class="n">status</span><span class="p">,</span> <span class="n">aoi_bounds</span><span class="p">,</span> <span class="n">dataset_extent</span> <span class="o">=</span> <span class="n">check_extent</span><span class="p">(</span><span class="n">geojson_boundary</span><span class="p">,</span> <span class="n">L2_extent</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;L2 Extent check: </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AOI bounds: </span><span class="si">{</span><span class="n">aoi_bounds</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dataset extent: </span><span class="si">{</span><span class="n">dataset_extent</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1531,84 +1550,79 @@ models.</p>
 <span class="n">filenames</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">if</span> <span class="n">temporal_resolution</span> <span class="o">==</span> <span class="s2">&quot;Annual&quot;</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">first_year</span><span class="p">,</span> <span class="n">last_year</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;y</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">.zip&quot;</span>
-        <span class="k">if</span> <span class="n">version</span><span class="o">==</span><span class="s1">&#39;v5&#39;</span><span class="p">:</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/yearly/etav5/downloads/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="k">elif</span> <span class="n">version</span><span class="o">==</span><span class="s1">&#39;v6&#39;</span><span class="p">:</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/yearly/etav6/downloads/yearly/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="k">elif</span> <span class="n">version</span><span class="o">==</span><span class="s1">&#39;v61&#39;</span><span class="p">:</span>
-            <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/yearly/etav61/downloads/yearly/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
 
-        <span class="n">output_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;ssebop_eta_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">.tif&quot;</span>
-        <span class="n">filenames</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">url</span><span class="p">,</span><span class="n">filename</span><span class="p">,</span> <span class="n">output_filename</span><span class="p">))</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://gismgr.fao.org/DATA/WAPOR-3/MAPSET/</span><span class="si">{</span><span class="n">Level</span><span class="si">}</span><span class="s2">-AETI-A/WAPOR-3.</span><span class="si">{</span><span class="n">Level</span><span class="si">}</span><span class="s2">-AETI-A.</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">.tif&quot;</span>
+
+        <span class="n">output_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;AETI_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">0101.tif&quot;</span>
+        <span class="n">filenames</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">url</span><span class="p">,</span> <span class="n">output_filename</span><span class="p">))</span>
 
 
 <span class="k">elif</span> <span class="n">temporal_resolution</span> <span class="o">==</span> <span class="s2">&quot;Monthly&quot;</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">first_year</span><span class="p">,</span> <span class="n">last_year</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
-            <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;m</span><span class="si">{</span><span class="n">year</span><span class="si">}{</span><span class="n">month</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">.zip&quot;</span>
-            <span class="k">if</span> <span class="n">version</span><span class="o">==</span><span class="s1">&#39;v5&#39;</span><span class="p">:</span>
-                <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/monthly/etav5/downloads/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="k">elif</span> <span class="n">version</span><span class="o">==</span><span class="s1">&#39;v6&#39;</span><span class="p">:</span>
-                <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/monthly/etav6/downloads/monthly/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="k">elif</span> <span class="n">version</span><span class="o">==</span><span class="s1">&#39;v61&#39;</span><span class="p">:</span>
-                <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://edcintl.cr.usgs.gov/downloads/sciweb1/shared/fews/web/global/monthly/etav61/downloads/monthly/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
-
-            <span class="n">output_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;ssebop_eta_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">month</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">.tif&quot;</span>
-            <span class="n">filenames</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">url</span><span class="p">,</span><span class="n">filename</span><span class="p">,</span> <span class="n">output_filename</span><span class="p">))</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://gismgr.fao.org/DATA/WAPOR-3/MAPSET/</span><span class="si">{</span><span class="n">Level</span><span class="si">}</span><span class="s2">-AETI-M/WAPOR-3.</span><span class="si">{</span><span class="n">Level</span><span class="si">}</span><span class="s2">-AETI-M.</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">month</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">.tif&quot;</span>
+            <span class="n">output_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;AETI_</span><span class="si">{</span><span class="n">year</span><span class="si">}{</span><span class="n">month</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">01.tif&quot;</span>
+            <span class="n">filenames</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">url</span><span class="p">,</span> <span class="n">output_filename</span><span class="p">))</span>
 
 <span class="k">else</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;temporal_resolution must be &#39;Annual&#39; or &#39;Monthly&#39;&quot;</span><span class="p">)</span>
 
 <span class="n">total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total files:&quot;</span><span class="p">,</span><span class="n">total</span><span class="p">)</span>
 
 
+<span class="k">for</span> <span class="n">url</span><span class="p">,</span> <span class="n">output_filename</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
 
-<span class="k">for</span> <span class="n">url</span><span class="p">,</span><span class="n">filename</span><span class="p">,</span> <span class="n">output_filename</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
-        <span class="n">zip_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloading </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> ...&quot;</span><span class="p">)</span>
+    <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">output_filename</span><span class="p">)</span>
 
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">zip_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="mi">8192</span><span class="p">):</span>
-                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+    <span class="n">temp_clip</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;temp_</span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">vsicurl_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/vsicurl/</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="c1"># Skip if already processed</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ </span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s2"> already exists, skipping...&quot;</span><span class="p">)</span>
+        <span class="k">continue</span>
 
 
-            <span class="c1"># Unzip</span>
-            <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">zip_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
-                <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">output_folder</span><span class="p">)</span>
 
-            <span class="c1"># Find the GeoTIFF file (assume one tif per zip)</span>
-            <span class="n">tif_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">zip_ref</span><span class="o">.</span><span class="n">namelist</span><span class="p">()</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.tif&quot;</span><span class="p">)]</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">tif_files</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No .tif found in </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloading...</span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-            <span class="n">tif_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">tif_files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-            <span class="n">out_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">output_filename</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">warp_options</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">WarpOptions</span><span class="p">(</span>
+            <span class="n">cutlineDSName</span><span class="o">=</span><span class="n">geojson_boundary</span><span class="p">,</span>
+            <span class="n">cropToCutline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">dstNodata</span><span class="o">=-</span><span class="mi">9999</span>
+        <span class="p">)</span>
+        <span class="n">gdal</span><span class="o">.</span><span class="n">Warp</span><span class="p">(</span><span class="n">destNameOrDestDS</span><span class="o">=</span><span class="n">temp_clip</span><span class="p">,</span> <span class="n">srcDSOrSrcDSTab</span><span class="o">=</span><span class="n">vsicurl_url</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">warp_options</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ GDAL warp failed for </span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">continue</span>
 
-            <span class="n">warp_options</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">WarpOptions</span><span class="p">(</span>
-                <span class="n">cutlineDSName</span><span class="o">=</span><span class="n">geojson_boundary</span><span class="p">,</span>
-                <span class="n">cropToCutline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                <span class="n">dstNodata</span><span class="o">=-</span><span class="mi">9999</span><span class="p">,</span>
+    <span class="c1"># Scale and write output with compression</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">temp_clip</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
+            <span class="n">profile</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">profile</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">nodata</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">nodata</span>
 
+            <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data</span> <span class="o">==</span> <span class="n">nodata</span><span class="p">,</span> <span class="o">-</span><span class="mi">9999</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+            <span class="n">scaled_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">9999</span><span class="p">,</span> <span class="n">data</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">9999</span><span class="p">)</span>
+
+            <span class="n">profile</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                <span class="n">dtype</span><span class="o">=</span><span class="n">rasterio</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+                <span class="n">nodata</span><span class="o">=-</span><span class="mi">9999</span><span class="p">,</span>
+                <span class="n">compress</span><span class="o">=</span><span class="s2">&quot;LZW&quot;</span>
             <span class="p">)</span>
-            <span class="n">gdal</span><span class="o">.</span><span class="n">Warp</span><span class="p">(</span><span class="n">destNameOrDestDS</span><span class="o">=</span><span class="n">out_path</span><span class="p">,</span> <span class="n">srcDSOrSrcDSTab</span><span class="o">=</span><span class="n">tif_path</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">warp_options</span><span class="p">)</span>
 
-            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">tif_path</span><span class="p">)</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">zip_path</span><span class="p">)</span>
-            <span class="n">xml_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">output_folder</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.xml&quot;</span><span class="p">)]</span>
-            <span class="k">for</span> <span class="n">xf</span> <span class="ow">in</span> <span class="n">xml_files</span><span class="p">:</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">xf</span><span class="p">))</span>
+            <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">profile</span><span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
+                <span class="n">dst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">scaled_data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">rasterio</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
 
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Downloaded </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to download </span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">temp_clip</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Processed and saved: </span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Failed to scale/write </span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">temp_clip</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">temp_clip</span><span class="p">)</span>
 </code></pre></div>
 
 
