@@ -2,122 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://waterinag.github.io/Data4WA/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/setup/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/dmp_copernicus/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/elevation_alos/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/eta_ssebop/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/eta_wapor3/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/gbwp_wapor3/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/lulc_copernicus/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/lulc_esa/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/lulc_wapor2/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/pcp_chirps/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/pcp_era5/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/pcp_gpm/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/pcp_gsmap/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/pcp_imd/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/pcp_persiann/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/ret_wapor3/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/datasets/tbp_wapor3/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/other_scripts/clip_rasters_to_boundary/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/other_scripts/compute_mean_raster/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/other_scripts/geotif_cogs/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/other_scripts/geotif_compress/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/other_scripts/get_raster_pixel_area/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/other_scripts/monthly_raster_to_annual/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/other_scripts/netcdf_to_geotiff/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/zonalstats/1_zonalstats_continuous_raster/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/zonalstats/2_LULC_class_pixelCount/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/zonalstats/3_zonalstats_over_cropland/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/zonalstats/4_zonalstats_over_each_LULC/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
     <url>
          <loc>https://waterinag.github.io/Data4WA/zonalstats/5_spei_zonalStats/</loc>
-         <lastmod>2025-09-14</lastmod>
+         <lastmod>2025-09-15</lastmod>
     </url>
 </urlset>
