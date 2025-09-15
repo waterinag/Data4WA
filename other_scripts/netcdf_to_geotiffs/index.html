@@ -12,13 +12,13 @@
         <meta name="author" content="waterinag">
       
       
-        <link rel="canonical" href="https://waterinag.github.io/Data4WA/other_scripts/monthly_raster_to_annual/">
+        <link rel="canonical" href="https://waterinag.github.io/Data4WA/other_scripts/netcdf_to_geotiffs/">
       
       
-        <link rel="prev" href="../../zonalstats/4_zonalstats_over_each_LULC/">
+        <link rel="prev" href="../compute_mean_raster/">
       
       
-        <link rel="next" href="../clip_rasters_to_boundary/">
+        <link rel="next" href="../geotiffs_compress/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>monthly_raster_to_annual - Data4WA</title>
+        <title>netcdf_to_geotiffs - Data4WA</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#convert-monthly-rasters-to-annual" class="md-skip">
+        <a href="#convert-netcdf-to-geotiff" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              monthly_raster_to_annual
+              netcdf_to_geotiffs
             
           </span>
         </div>
@@ -1166,30 +1166,20 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../monthly_rasters_to_annual/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    monthly_raster_to_annual
+    monthly_rasters_to_annual
     
   </span>
   
 
       </a>
-      
     </li>
   
 
@@ -1207,7 +1197,7 @@
   
   
   <span class="md-ellipsis">
-    clip_raster_to_boundary
+    clip_rasters_to_boundary
     
   </span>
   
@@ -1268,20 +1258,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../netcdf_to_geotiff/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    netcdf_to_geotiff
+    netcdf_to_geotiffs
     
   </span>
   
 
       </a>
+      
     </li>
   
 
@@ -1294,12 +1294,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../geotif_compress/" class="md-nav__link">
+      <a href="../geotiffs_compress/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    geotiff_compress
+    geotiffs_compress
     
   </span>
   
@@ -1377,64 +1377,56 @@
   
 
 
-<h1 id="convert-monthly-rasters-to-annual">Convert Monthly Rasters to Annual</h1>
-<p>This script aggregates a folder of monthly raster files into annual rasters by summing all 12 months of each year. For every year in the specified range, it reads the monthly GeoTIFFs, accumulates their values, and writes out a single annual GeoTIFF.</p>
+<h1 id="convert-netcdf-to-geotiff">Convert NetCDF to GeoTIFF</h1>
+<p>This script converts monthly grids stored in NetCDF format into individual GeoTIFF rasters. It loops over all NetCDF files in a folder, extracts the primary data variable, enforces CRS (EPSG:4326), sorts months if needed, and exports each monthly slice as a separate GeoTIFF file. </p>
 <hr />
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">rioxarray</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
 
-<span class="c1"># Set your paths</span>
-<span class="n">input_folder</span> <span class="o">=</span> <span class="s2">&quot;WaPOR_ETg_M&quot;</span>      
-<span class="n">output_folder</span> <span class="o">=</span> <span class="s2">&quot;WaPOR_ETg_A&quot;</span>   
+<span class="n">input_folder</span> <span class="o">=</span> <span class="s2">&quot;Monthly Growing Area Grids/2015&quot;</span>
+<span class="n">output_folder</span> <span class="o">=</span> <span class="s2">&quot;monthly_tifs&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="n">firstyear</span> <span class="o">=</span> <span class="mi">2018</span>
-<span class="n">lastyear</span> <span class="o">=</span> <span class="mi">2023</span>  <span class="c1"># inclusive</span>
-
-<span class="c1"># Create the output folder if it doesn&#39;t exist</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_folder</span><span class="p">):</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_folder</span><span class="p">)</span>
-
-<span class="c1"># Loop through each year</span>
-<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">firstyear</span><span class="p">,</span> <span class="n">lastyear</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">sum_array</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">profile</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="c1"># Loop through each month (1 to 12)</span>
-    <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
-        <span class="c1"># Construct the filename. Adjust this pattern if needed.</span>
-        <span class="n">monthly_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;wapor3_etg_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">month</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">.tif&quot;</span>
-        <span class="n">input_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_folder</span><span class="p">,</span> <span class="n">monthly_filename</span><span class="p">)</span>
+<span class="c1"># Get all NetCDF files in the input folder</span>
+<span class="n">nc_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_folder</span><span class="p">,</span> <span class="s2">&quot;*.nc&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nc_files</span><span class="p">)</span>
 
 
-        <span class="c1"># Check if the file exists</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">input_path</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">input_path</span><span class="si">}</span><span class="s2"> does not exist, skipping month </span><span class="si">{</span><span class="n">month</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-            <span class="k">continue</span>
+<span class="k">for</span> <span class="n">nc_file</span> <span class="ow">in</span> <span class="n">nc_files</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processing: </span><span class="si">{</span><span class="n">nc_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">nc_file</span><span class="p">)</span>
 
-        <span class="c1"># Read the monthly raster data</span>
-        <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">input_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Get the primary data variable</span>
+    <span class="n">var_name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">data_vars</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;var_name&quot;</span><span class="p">,</span><span class="n">var_name</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span>
 
-            <span class="c1"># Initialize the sum_array and profile on the first valid raster</span>
-            <span class="k">if</span> <span class="n">sum_array</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">sum_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
-                <span class="n">profile</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">profile</span>
+    <span class="c1"># Enable spatial referencing</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">write_crs</span><span class="p">(</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
 
-            <span class="c1"># Add the monthly data (ensure data is converted to float for accumulation)</span>
-            <span class="n">sum_array</span> <span class="o">+=</span> <span class="n">data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="c1"># Sort months if unordered</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">][</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sortby</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)</span>
 
-    <span class="c1"># Check if any monthly rasters were processed for the year</span>
-    <span class="k">if</span> <span class="n">sum_array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="c1"># Update the metadata profile for output</span>
-        <span class="n">profile</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">rasterio</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">month_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="n">month</span><span class="p">)</span>
 
-        <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;wapor3_etg_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">.tif&quot;</span><span class="p">)</span>
-        <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">profile</span><span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
-            <span class="n">dst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">sum_array</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Annual raster for </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2"> saved to </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No monthly rasters found for year </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="n">output_folder</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">nc_file</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.nc&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">_month_</span><span class="si">{</span><span class="n">month</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">.tif&quot;</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Flip lat axis if needed (optional, comment out if not required)</span>
+        <span class="k">if</span> <span class="n">month_data</span><span class="o">.</span><span class="n">latitude</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">month_data</span><span class="o">.</span><span class="n">latitude</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">month_data</span> <span class="o">=</span> <span class="n">month_data</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># Export to GeoTIFF</span>
+        <span class="n">month_data</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">to_raster</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float32&quot;</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=-</span><span class="mi">9999</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saved: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">ds</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 
 
