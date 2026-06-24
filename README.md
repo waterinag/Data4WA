@@ -9,4 +9,4 @@ Live docs: [waterinag.github.io/Data4WA](https://waterinag.github.io/Data4WA/)
 
 ## Author
 
-**Aman Chaudhary** — [LinkedIn](https://www.linkedin.com/in/amanchry/) · [GitHub](https://github.com/amanchry)
+**Aman Chaudhary** — [GitHub](https://github.com/amanchry)
