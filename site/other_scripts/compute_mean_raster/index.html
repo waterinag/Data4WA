@@ -12,22 +12,28 @@
         <meta name="author" content="waterinag">
       
       
+        <link rel="canonical" href="https://waterinag.github.io/Data4WA/other_scripts/compute_mean_raster/">
       
       
+        <link rel="prev" href="../get_raster_pixel_area/">
       
-      <link rel="icon" href="/Data4WA/assets/images/favicon.png">
+      
+        <link rel="next" href="../netcdf_to_geotiffs/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
-        <title>Data4WA</title>
+        <title>compute_mean_raster - Data4WA</title>
       
     
     
-      <link rel="stylesheet" href="/Data4WA/assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="/Data4WA/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("/Data4WA/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#compute-multi-temporal-mean-raster" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/Data4WA/." title="Data4WA" class="md-header__button md-logo" aria-label="Data4WA" data-md-component="logo">
+    <a href="../.." title="Data4WA" class="md-header__button md-logo" aria-label="Data4WA" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -103,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              compute_mean_raster
             
           </span>
         </div>
@@ -207,7 +218,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/Data4WA/." title="Data4WA" class="md-nav__button md-logo" aria-label="Data4WA" data-md-component="logo">
+    <a href="../.." title="Data4WA" class="md-nav__button md-logo" aria-label="Data4WA" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -225,7 +236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -247,7 +258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/setup/" class="md-nav__link">
+      <a href="../../setup/" class="md-nav__link">
         
   
   
@@ -345,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/eta_wapor3/" class="md-nav__link">
+      <a href="../../datasets/eta_wapor3/" class="md-nav__link">
         
   
   
@@ -368,7 +379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/eta_ssebop/" class="md-nav__link">
+      <a href="../../datasets/eta_ssebop/" class="md-nav__link">
         
   
   
@@ -437,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/pcp_chirps/" class="md-nav__link">
+      <a href="../../datasets/pcp_chirps/" class="md-nav__link">
         
   
   
@@ -460,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/pcp_era5/" class="md-nav__link">
+      <a href="../../datasets/pcp_era5/" class="md-nav__link">
         
   
   
@@ -483,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/pcp_gsmap/" class="md-nav__link">
+      <a href="../../datasets/pcp_gsmap/" class="md-nav__link">
         
   
   
@@ -506,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/pcp_gpm/" class="md-nav__link">
+      <a href="../../datasets/pcp_gpm/" class="md-nav__link">
         
   
   
@@ -529,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/pcp_persiann/" class="md-nav__link">
+      <a href="../../datasets/pcp_persiann/" class="md-nav__link">
         
   
   
@@ -552,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/pcp_imd/" class="md-nav__link">
+      <a href="../../datasets/pcp_imd/" class="md-nav__link">
         
   
   
@@ -621,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/ret_wapor3/" class="md-nav__link">
+      <a href="../../datasets/ret_wapor3/" class="md-nav__link">
         
   
   
@@ -690,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/tbp_wapor3/" class="md-nav__link">
+      <a href="../../datasets/tbp_wapor3/" class="md-nav__link">
         
   
   
@@ -713,7 +724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/dmp_copernicus/" class="md-nav__link">
+      <a href="../../datasets/dmp_copernicus/" class="md-nav__link">
         
   
   
@@ -782,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/gbwp_wapor3/" class="md-nav__link">
+      <a href="../../datasets/gbwp_wapor3/" class="md-nav__link">
         
   
   
@@ -851,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/lulc_esa/" class="md-nav__link">
+      <a href="../../datasets/lulc_esa/" class="md-nav__link">
         
   
   
@@ -874,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/lulc_wapor2/" class="md-nav__link">
+      <a href="../../datasets/lulc_wapor2/" class="md-nav__link">
         
   
   
@@ -943,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/datasets/elevation_alos/" class="md-nav__link">
+      <a href="../../datasets/elevation_alos/" class="md-nav__link">
         
   
   
@@ -1019,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/zonalstats/1_zonalstats_continuous_raster/" class="md-nav__link">
+      <a href="../../zonalstats/1_zonalstats_continuous_raster/" class="md-nav__link">
         
   
   
@@ -1042,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/zonalstats/2_LULC_class_pixelCount/" class="md-nav__link">
+      <a href="../../zonalstats/2_LULC_class_pixelCount/" class="md-nav__link">
         
   
   
@@ -1065,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/zonalstats/3_zonalstats_over_cropland/" class="md-nav__link">
+      <a href="../../zonalstats/3_zonalstats_over_cropland/" class="md-nav__link">
         
   
   
@@ -1088,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/zonalstats/4_zonalstats_over_each_LULC/" class="md-nav__link">
+      <a href="../../zonalstats/4_zonalstats_over_each_LULC/" class="md-nav__link">
         
   
   
@@ -1115,18 +1126,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1142,7 +1155,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Other Scripts
@@ -1156,7 +1169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/other_scripts/monthly_rasters_to_annual/" class="md-nav__link">
+      <a href="../monthly_rasters_to_annual/" class="md-nav__link">
         
   
   
@@ -1179,7 +1192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/other_scripts/clip_rasters_to_boundary/" class="md-nav__link">
+      <a href="../clip_rasters_to_boundary/" class="md-nav__link">
         
   
   
@@ -1202,7 +1215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/other_scripts/get_raster_pixel_area/" class="md-nav__link">
+      <a href="../get_raster_pixel_area/" class="md-nav__link">
         
   
   
@@ -1222,10 +1235,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/Data4WA/other_scripts/compute_mean_raster/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1236,6 +1258,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1248,7 +1271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/other_scripts/netcdf_to_geotiffs/" class="md-nav__link">
+      <a href="../netcdf_to_geotiffs/" class="md-nav__link">
         
   
   
@@ -1271,7 +1294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/other_scripts/geotiffs_compress/" class="md-nav__link">
+      <a href="../geotiffs_compress/" class="md-nav__link">
         
   
   
@@ -1294,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Data4WA/other_scripts/geotif_cogs/" class="md-nav__link">
+      <a href="../geotif_cogs/" class="md-nav__link">
         
   
   
@@ -1334,6 +1357,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -1345,8 +1370,92 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="compute-multi-temporal-mean-raster">Compute Multi-Temporal Mean Raster</h1>
+<p>This script calculates the multi-year mean from a stack of annual raster files. It reads all GeoTIFFs in a folder, handles nodata values, and processes the rasters block by block to avoid memory issues with large datasets. The result is a single GeoTIFF representing the average across all input years.</p>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">osgeo</span><span class="w"> </span><span class="kn">import</span> <span class="n">gdal</span>
+
+<span class="c1"># Input and output paths</span>
+<span class="n">raster_folder</span> <span class="o">=</span> <span class="s1">&#39;WaPOR_v3_AETI_Annual&#39;</span>
+<span class="n">mean_raster_path</span> <span class="o">=</span> <span class="s1">&#39;WaPOR_v3_AETI_Mean_2018_24.tif&#39;</span>
+
+<span class="c1"># List input rasters</span>
+<span class="n">file_paths</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">raster_folder</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">raster_folder</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">f</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;._&#39;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">file_paths</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>  <span class="c1"># optional, for consistent order</span>
+
+<span class="c1"># Open first raster for shape</span>
+<span class="n">ds0</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">file_paths</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">RasterXSize</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">RasterYSize</span>
+<span class="n">band_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">file_paths</span><span class="p">)</span>
+<span class="n">gt</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">GetGeoTransform</span><span class="p">()</span>
+<span class="n">proj</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">GetProjection</span><span class="p">()</span>
+<span class="n">nodata</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">GetNoDataValue</span><span class="p">()</span>
+<span class="n">ds0</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># Create output raster</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s1">&#39;GTiff&#39;</span><span class="p">)</span>
+<span class="n">out_ds</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="n">mean_raster_path</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float32</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;COMPRESS=DEFLATE&#39;</span><span class="p">])</span>
+<span class="n">out_ds</span><span class="o">.</span><span class="n">SetGeoTransform</span><span class="p">(</span><span class="n">gt</span><span class="p">)</span>
+<span class="n">out_ds</span><span class="o">.</span><span class="n">SetProjection</span><span class="p">(</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">out_band</span> <span class="o">=</span> <span class="n">out_ds</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">out_band</span><span class="o">.</span><span class="n">SetNoDataValue</span><span class="p">(</span><span class="o">-</span><span class="mi">9999</span><span class="p">)</span>
+
+<span class="c1"># Process block by block</span>
+<span class="n">block_size</span> <span class="o">=</span> <span class="mi">512</span>
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">block_size</span><span class="p">):</span>
+    <span class="n">ysize</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">block_size</span><span class="p">,</span> <span class="n">rows</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">block_size</span><span class="p">):</span>
+        <span class="n">xsize</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">block_size</span><span class="p">,</span> <span class="n">cols</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+        <span class="n">block_stack</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">fpath</span> <span class="ow">in</span> <span class="n">file_paths</span><span class="p">:</span>
+            <span class="n">ds</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">xsize</span><span class="p">,</span> <span class="n">ysize</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+            <span class="n">ds</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">nodata</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">data</span> <span class="o">==</span> <span class="n">nodata</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="n">block_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="n">block_stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">block_stack</span><span class="p">)</span>
+        <span class="n">block_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">block_stack</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">block_mean</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">block_mean</span><span class="p">)]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9999</span>
+        <span class="n">out_band</span><span class="o">.</span><span class="n">WriteArray</span><span class="p">(</span><span class="n">block_mean</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Finalize</span>
+<span class="n">out_band</span><span class="o">.</span><span class="n">FlushCache</span><span class="p">()</span>
+<span class="n">out_ds</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Mean raster created efficiently using GDAL!&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1427,10 +1536,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/Data4WA/", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "content.code.copy"], "search": "/Data4WA/assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/Data4WA/assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>

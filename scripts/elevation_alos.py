@@ -1,26 +1,3 @@
-
-# LALOS World 3D - 30m (AW3D30)
-The "ALOS World 3D-30m" (AW3D30) dataset is a 30 meter resolution global digital surface model (DSM), developed by the Japan Aerospace Exploration Agency (JAXA). AWD30 was constructed from the Panchromatic Remote-sensing Instrument for Stereo Mapping (PRISM) on board Advanced Land Observing Satellite (ALOS), operated from 2006 to 2011.
-
----
-
-## Dataset Overview
-
-- **Product**: JAXA/ALOS/AW3D30
-- **Source**: [https://www.eorc.jaxa.jp/ALOS/en/dataset/aw3d30/aw3d30_e.htm](https://www.eorc.jaxa.jp/ALOS/en/dataset/aw3d30/aw3d30_e.htm)
-- **Format**: GeoTIFF
-- **Extent**: Global
-- **Spatial Resolution**: 30m
-
-
-
----
-
-
-## Download ALOS DSM 
-
-```python
-
 import geopandas as gpd
 from pystac_client import Client
 import planetary_computer as planetary_computer
@@ -133,9 +110,3 @@ for tif in all_tifs:
 if os.path.exists(vrt_path):
     os.remove(vrt_path)
 print(f"🗑️ Cleaned up intermediate files")
-
-
-```
-
----
-

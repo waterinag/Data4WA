@@ -79,15 +79,15 @@ nav:
     - LULC Pixel Count: zonalstats/2_LULC_class_pixelCount.md
     - Zonalsstats over cropland area: zonalstats/3_zonalstats_over_cropland.md
     - Zonalstats over Each LULC Class: zonalstats/4_zonalstats_over_each_LULC.md
-    - SPEI Stats: zonalstats/5_spei_zonalStats.md
+    # - SPEI Stats: zonalstats/5_spei_zonalStats.md
 
   - Other Scripts:
-    - monthly_raster_to_annual: other_scripts/monthly_raster_to_annual.md
-    - clip_raster_to_boundary: other_scripts/clip_rasters_to_boundary.md
+    - monthly_rasters_to_annual: other_scripts/monthly_rasters_to_annual.md
+    - clip_rasters_to_boundary: other_scripts/clip_rasters_to_boundary.md
     - get_raster_pixel_area: other_scripts/get_raster_pixel_area.md
     - compute_mean_raster: other_scripts/compute_mean_raster.md
-    - netcdf_to_geotiff: other_scripts/netcdf_to_geotiff.md
-    - geotiff_compress: other_scripts/geotif_compress.md
+    - netcdf_to_geotiffs: other_scripts/netcdf_to_geotiffs.md
+    - geotiffs_compress: other_scripts/geotiffs_compress.md
     - geotiff_cogs: other_scripts/geotif_cogs.md
 
 

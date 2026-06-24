@@ -12,28 +12,28 @@
         <meta name="author" content="waterinag">
       
       
-        <link rel="canonical" href="https://waterinag.github.io/Data4WA/setup/">
+        <link rel="canonical" href="https://waterinag.github.io/Data4WA/datasets/pcp_gsmap/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../pcp_era5/">
       
       
-        <link rel="next" href="../datasets/eta_wapor3/">
+        <link rel="next" href="../pcp_gpm/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
-        <title>Environment Setup - Data4WA</title>
+        <title>GSMap - Data4WA</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#environment-setup-for-dataset-download" class="md-skip">
+        <a href="#precipitation-gsmap" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Data4WA" class="md-header__button md-logo" aria-label="Data4WA" data-md-component="logo">
+    <a href="../.." title="Data4WA" class="md-header__button md-logo" aria-label="Data4WA" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Environment Setup
+              GSMap
             
           </span>
         </div>
@@ -218,7 +218,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Data4WA" class="md-nav__button md-logo" aria-label="Data4WA" data-md-component="logo">
+    <a href="../.." title="Data4WA" class="md-nav__button md-logo" aria-label="Data4WA" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -236,7 +236,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -255,32 +255,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Environment Setup
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../setup/" class="md-nav__link">
         
   
   
@@ -291,86 +269,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-install-conda-recommended" class="md-nav__link">
-    <span class="md-ellipsis">
-      1: Install Conda (Recommended)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1: Install Conda (Recommended)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Windows
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos-os" class="md-nav__link">
-    <span class="md-ellipsis">
-      MacOS OS
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-create-a-conda-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      2: Create a Conda Environment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-install-gdal-and-geospatial-libraries" class="md-nav__link">
-    <span class="md-ellipsis">
-      3: Install GDAL and Geospatial Libraries
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-enable-jupyter-notebook-support-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      4: Enable Jupyter Notebook Support (Optional)
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -379,18 +277,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -406,7 +306,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Download Datasets
@@ -458,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasets/eta_wapor3/" class="md-nav__link">
+      <a href="../eta_wapor3/" class="md-nav__link">
         
   
   
@@ -481,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasets/eta_ssebop/" class="md-nav__link">
+      <a href="../eta_ssebop/" class="md-nav__link">
         
   
   
@@ -509,18 +409,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -536,7 +438,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Precipitation
@@ -550,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasets/pcp_chirps/" class="md-nav__link">
+      <a href="../pcp_chirps/" class="md-nav__link">
         
   
   
@@ -573,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasets/pcp_era5/" class="md-nav__link">
+      <a href="../pcp_era5/" class="md-nav__link">
         
   
   
@@ -593,10 +495,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../datasets/pcp_gsmap/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    GSMap
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -607,6 +531,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gsmap-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      GSMaP Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataset-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dataset Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-daily-gsmap-pcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download Daily GSMaP PCP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregate-daily-geotiffs-to-monthly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregate Daily GeoTIFFs to Monthly
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -619,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasets/pcp_gpm/" class="md-nav__link">
+      <a href="../pcp_gpm/" class="md-nav__link">
         
   
   
@@ -642,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasets/pcp_persiann/" class="md-nav__link">
+      <a href="../pcp_persiann/" class="md-nav__link">
         
   
   
@@ -665,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasets/pcp_imd/" class="md-nav__link">
+      <a href="../pcp_imd/" class="md-nav__link">
         
   
   
@@ -734,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasets/ret_wapor3/" class="md-nav__link">
+      <a href="../ret_wapor3/" class="md-nav__link">
         
   
   
@@ -803,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasets/tbp_wapor3/" class="md-nav__link">
+      <a href="../tbp_wapor3/" class="md-nav__link">
         
   
   
@@ -826,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasets/dmp_copernicus/" class="md-nav__link">
+      <a href="../dmp_copernicus/" class="md-nav__link">
         
   
   
@@ -895,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasets/gbwp_wapor3/" class="md-nav__link">
+      <a href="../gbwp_wapor3/" class="md-nav__link">
         
   
   
@@ -964,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasets/lulc_esa/" class="md-nav__link">
+      <a href="../lulc_esa/" class="md-nav__link">
         
   
   
@@ -987,7 +967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasets/lulc_wapor2/" class="md-nav__link">
+      <a href="../lulc_wapor2/" class="md-nav__link">
         
   
   
@@ -1056,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datasets/elevation_alos/" class="md-nav__link">
+      <a href="../elevation_alos/" class="md-nav__link">
         
   
   
@@ -1132,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zonalstats/1_zonalstats_continuous_raster/" class="md-nav__link">
+      <a href="../../zonalstats/1_zonalstats_continuous_raster/" class="md-nav__link">
         
   
   
@@ -1155,7 +1135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zonalstats/2_LULC_class_pixelCount/" class="md-nav__link">
+      <a href="../../zonalstats/2_LULC_class_pixelCount/" class="md-nav__link">
         
   
   
@@ -1178,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zonalstats/3_zonalstats_over_cropland/" class="md-nav__link">
+      <a href="../../zonalstats/3_zonalstats_over_cropland/" class="md-nav__link">
         
   
   
@@ -1201,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zonalstats/4_zonalstats_over_each_LULC/" class="md-nav__link">
+      <a href="../../zonalstats/4_zonalstats_over_each_LULC/" class="md-nav__link">
         
   
   
@@ -1269,7 +1249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../other_scripts/monthly_rasters_to_annual/" class="md-nav__link">
+      <a href="../../other_scripts/monthly_rasters_to_annual/" class="md-nav__link">
         
   
   
@@ -1292,7 +1272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../other_scripts/clip_rasters_to_boundary/" class="md-nav__link">
+      <a href="../../other_scripts/clip_rasters_to_boundary/" class="md-nav__link">
         
   
   
@@ -1315,7 +1295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../other_scripts/get_raster_pixel_area/" class="md-nav__link">
+      <a href="../../other_scripts/get_raster_pixel_area/" class="md-nav__link">
         
   
   
@@ -1338,7 +1318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../other_scripts/compute_mean_raster/" class="md-nav__link">
+      <a href="../../other_scripts/compute_mean_raster/" class="md-nav__link">
         
   
   
@@ -1361,7 +1341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../other_scripts/netcdf_to_geotiffs/" class="md-nav__link">
+      <a href="../../other_scripts/netcdf_to_geotiffs/" class="md-nav__link">
         
   
   
@@ -1384,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../other_scripts/geotiffs_compress/" class="md-nav__link">
+      <a href="../../other_scripts/geotiffs_compress/" class="md-nav__link">
         
   
   
@@ -1407,7 +1387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../other_scripts/geotif_cogs/" class="md-nav__link">
+      <a href="../../other_scripts/geotif_cogs/" class="md-nav__link">
         
   
   
@@ -1457,60 +1437,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-install-conda-recommended" class="md-nav__link">
+  <a href="#gsmap-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      1: Install Conda (Recommended)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1: Install Conda (Recommended)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Windows
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos-os" class="md-nav__link">
-    <span class="md-ellipsis">
-      MacOS OS
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-create-a-conda-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      2: Create a Conda Environment
+      GSMaP Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-install-gdal-and-geospatial-libraries" class="md-nav__link">
+  <a href="#dataset-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      3: Install GDAL and Geospatial Libraries
+      Dataset Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-enable-jupyter-notebook-support-optional" class="md-nav__link">
+  <a href="#download-daily-gsmap-pcp" class="md-nav__link">
     <span class="md-ellipsis">
-      4: Enable Jupyter Notebook Support (Optional)
+      Download Daily GSMaP PCP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregate-daily-geotiffs-to-monthly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregate Daily GeoTIFFs to Monthly
     </span>
   </a>
   
@@ -1535,63 +1491,165 @@
   
 
 
-<h1 id="environment-setup-for-dataset-download">⚙️ Environment Setup for Dataset Download</h1>
-<p>To download and process datasets with Data4WA, you need a Python environment configured with common geospatial libraries such as GDAL, Rasterio, Xarray, and others.</p>
-<h3 id="1-install-conda-recommended">1: Install Conda (Recommended)</h3>
-<p>Conda is a cross-platform environment manager that makes it easy to install geospatial libraries like GDAL.</p>
-<h4 id="windows">Windows</h4>
-<ol>
-<li>Download the <strong>Miniconda installer</strong>:<br />
-   👉 <a href="https://docs.conda.io/en/latest/miniconda.html#windows-installers">Miniconda Windows 64-bit</a></li>
-<li>Run the installer and choose “Add Miniconda to PATH” during setup.</li>
-<li>After installation, open <strong>Anaconda Prompt</strong> or <strong>Command Prompt</strong> and test:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>--version
+<h1 id="precipitation-gsmap">Precipitation (GSMaP)</h1>
+<h2 id="gsmap-overview">GSMaP Overview</h2>
+<p>Global Satellite Mapping of Precipitation (GSMaP) provides a global hourly rain rate with a 0.1 x 0.1 degree resolution. GSMaP is a product of the Global Precipitation Measurement (GPM) mission, which provides global precipitation observations at three hour intervals. Values are estimated using multi-band passive microwave and infrared radiometers from the GPM Core Observatory satellite and with the assistance of a constellation of other satellites.</p>
+<hr />
+<h2 id="dataset-overview">Dataset Overview</h2>
+<ul>
+<li><strong>Product</strong>: GSMaP</li>
+<li><strong>Source</strong>: <a href="https://developers.google.com/earth-engine/datasets/catalog/JAXA_GPM_L3_GSMaP_v8_operational">https://developers.google.com/earth-engine/datasets/catalog/JAXA_GPM_L3_GSMaP_v8_operational</a></li>
+<li><strong>Format</strong>: GeoTIFF</li>
+<li><strong>Extent</strong>: Global</li>
+<li><strong>Data Availability</strong>: 1998-present</li>
+<li><strong>Spatial Resolution</strong>: 11132m</li>
+<li><strong>Temporal Resolution</strong>: Hourly </li>
+</ul>
+<hr />
+<hr />
+<h2 id="download-daily-gsmap-pcp">Download Daily GSMaP PCP</h2>
+<p>The following script downloads <strong>daily GSMaP PCP GeoTIFFs (in mm/day)</strong> for a given year range from Google Earth Engine:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">ee</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geemap</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="c1"># Trigger the authentication flow.</span>
+<span class="n">ee</span><span class="o">.</span><span class="n">Authenticate</span><span class="p">()</span>
+
+<span class="c1"># Initialize the library.</span>
+<span class="n">ee</span><span class="o">.</span><span class="n">Initialize</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="s1">&#39;waterinfor&#39;</span><span class="p">)</span> <span class="c1"># &lt;-- change to your GEE project</span>
+
+<span class="c1"># Define the start and end years.</span>
+<span class="n">firstyear</span> <span class="o">=</span> <span class="mi">2024</span>
+<span class="n">lastyear</span> <span class="o">=</span> <span class="mi">2024</span>
+
+<span class="n">output_directory</span> <span class="o">=</span> <span class="s1">&#39;GsMap_Daily&#39;</span>  <span class="c1"># Change to your desired folder path.</span>
+
+
+<span class="n">years</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">List</span><span class="o">.</span><span class="n">sequence</span><span class="p">(</span><span class="n">firstyear</span><span class="p">,</span> <span class="n">lastyear</span><span class="p">)</span>
+
+<span class="n">start_date</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="n">firstyear</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="n">lastyear</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">filenames</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">current_date</span> <span class="o">=</span> <span class="n">start_date</span>
+<span class="k">while</span> <span class="n">current_date</span> <span class="o">&lt;=</span> <span class="n">end_date</span><span class="p">:</span>
+    <span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;pcp_gsmap_</span><span class="si">{</span><span class="n">current_date</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">current_date</span><span class="o">.</span><span class="n">month</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">current_date</span><span class="o">.</span><span class="n">day</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">filenames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+    <span class="n">dates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">))</span>
+    <span class="n">current_date</span> <span class="o">+=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🗂️ Total days to process: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">hourly_ic</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">ImageCollection</span><span class="p">(</span><span class="s2">&quot;JAXA/GPM_L3/GSMaP/v8/operational&quot;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">filterDate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">firstyear</span><span class="si">}</span><span class="s1">-01-01&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">lastyear</span><span class="si">}</span><span class="s1">-12-31&#39;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;hourlyPrecipRateGC&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Function to compute daily total</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_daily_image</span><span class="p">(</span><span class="n">date_str</span><span class="p">):</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">start</span><span class="o">.</span><span class="n">advance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">)</span>
+
+    <span class="n">daily_sum</span> <span class="o">=</span> <span class="n">hourly_ic</span><span class="o">.</span><span class="n">filterDate</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> \
+        <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;PCP&#39;</span><span class="p">)</span> \
+        <span class="o">.</span><span class="n">set</span><span class="p">({</span>
+            <span class="s1">&#39;system:time_start&#39;</span><span class="p">:</span> <span class="n">start</span><span class="o">.</span><span class="n">millis</span><span class="p">(),</span>
+            <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">start</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;YYYY_MM_dd&#39;</span><span class="p">)</span>
+        <span class="p">})</span>
+
+    <span class="k">return</span> <span class="n">daily_sum</span> 
+
+<span class="n">daily_images</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">ImageCollection</span><span class="p">(</span><span class="n">ee</span><span class="o">.</span><span class="n">List</span><span class="p">([</span><span class="n">make_daily_image</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">]))</span>
+
+
+<span class="n">count</span> <span class="o">=</span> <span class="n">daily_images</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">getInfo</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📅 Total daily images: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="n">geom</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Geometry</span><span class="o">.</span><span class="n">BBox</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+
+
+<span class="n">feature</span> <span class="o">=</span> <span class="n">ee</span><span class="o">.</span><span class="n">Feature</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span> <span class="p">{})</span>
+<span class="n">roi</span> <span class="o">=</span> <span class="n">feature</span><span class="o">.</span><span class="n">geometry</span><span class="p">()</span>
+
+
+
+<span class="c1"># Export all images to Google Drive</span>
+<span class="n">geemap</span><span class="o">.</span><span class="n">ee_export_image_collection</span><span class="p">(</span>
+    <span class="n">daily_images</span><span class="p">,</span>
+    <span class="n">out_dir</span><span class="o">=</span><span class="n">output_directory</span><span class="p">,</span>
+    <span class="n">region</span><span class="o">=</span><span class="n">roi</span><span class="p">,</span>
+    <span class="n">scale</span><span class="o">=</span><span class="mi">15000</span><span class="p">,</span>             <span class="c1"># You can use 10000 or 15000</span>
+    <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span>
+    <span class="n">filenames</span><span class="o">=</span><span class="n">filenames</span>
+
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🚀 Export tasks created. Check Earth Engine Tasks tab or Code Editor.&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h4 id="macos-os">MacOS OS</h4>
-<ol>
-<li>
-<p>Download the installer for macOS from:<br />
-   👉 <a href="https://docs.conda.io/en/latest/miniconda.html#macos-installers">Miniconda macOS</a></p>
-</li>
-<li>
-<p>Run the installer</p>
-</li>
-<li>
-<p>Restart terminal and verify:</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>--version
+<h2 id="aggregate-daily-geotiffs-to-monthly">Aggregate Daily GeoTIFFs to Monthly</h2>
+<p>This script aggregate daily rasters into monthly precipitation maps by summing values.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># ==== Paths ====</span>
+<span class="n">input_folder</span> <span class="o">=</span> <span class="s2">&quot;/Volumes/ExternalHDD/RS_Data/GsMap_Daily&quot;</span>      
+<span class="n">output_folder</span> <span class="o">=</span> <span class="s2">&quot;/Volumes/ExternalHDD/RS_Data/GsMap_Monthly&quot;</span>   
+
+<span class="n">firstyear</span> <span class="o">=</span> <span class="mi">2024</span>
+<span class="n">lastyear</span> <span class="o">=</span> <span class="mi">2024</span>  <span class="c1"># inclusive</span>
+
+<span class="c1"># Create the output folder if it doesn&#39;t exist</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Loop through years</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">firstyear</span><span class="p">,</span> <span class="n">lastyear</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
+        <span class="n">sum_array</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">profile</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Loop through all possible days in month</span>
+        <span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">):</span>  <span class="c1"># max days in a month</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># Validate date (skip invalid ones like Feb 30)</span>
+                <span class="n">date_obj</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="c1"># File naming pattern — adjust if yours differs</span>
+            <span class="n">daily_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;pcp_gsmap_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">month</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">day</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">.tif&quot;</span>
+            <span class="n">input_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_folder</span><span class="p">,</span> <span class="n">daily_filename</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">input_path</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">input_path</span><span class="si">}</span><span class="s2"> does not exist, skipping day </span><span class="si">{</span><span class="n">day</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">input_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">sum_array</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">sum_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+                    <span class="n">profile</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">profile</span>
+
+                <span class="n">sum_array</span> <span class="o">+=</span> <span class="n">data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+        <span class="c1"># Save the monthly total</span>
+        <span class="k">if</span> <span class="n">sum_array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">profile</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">rasterio</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;pcpm_gsmap_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">month</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">.tif&quot;</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">profile</span><span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
+                <span class="n">dst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">sum_array</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Monthly raster for </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">month</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2"> saved to </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No daily rasters found for </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">month</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </code></pre></div>
-<hr />
-<h3 id="2-create-a-conda-environment">2: Create a Conda Environment</h3>
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>data4wa_env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
-conda<span class="w"> </span>activate<span class="w"> </span>data4wa_env
-</code></pre></div>
-<hr />
-<h3 id="3-install-gdal-and-geospatial-libraries">3: Install GDAL and Geospatial Libraries</h3>
-<p>Use the <code>conda-forge</code> channel:</p>
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="s2">&quot;gdal=3.10.*&quot;</span><span class="w"> </span>libgdal-jp2openjpeg<span class="w">  </span>
-</code></pre></div>
-<p>Verify GDAL installation:</p>
-<div class="highlight"><pre><span></span><code>gdalinfo<span class="w"> </span>--version
-</code></pre></div>
-<p>Then install required Python libraries:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>tqdm<span class="w"> </span>geopandas<span class="w"> </span>numpy<span class="w"> </span>xarray<span class="w"> </span>rioxarray<span class="w"> </span>rasterio<span class="w"> </span>netCDF4<span class="w"> </span>requests<span class="w"> </span>beautifulsoup4<span class="w">  </span>earthengine-api<span class="w"> </span>geemap<span class="w"> </span>planetary-computer<span class="w"> </span>pystac-client
-</code></pre></div>
-<h3 id="4-enable-jupyter-notebook-support-optional">4: Enable Jupyter Notebook Support (Optional)</h3>
-<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>notebook<span class="w"> </span>ipykernel
-python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="o">=</span>data4wa_env<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Python (data4wa_env)&quot;</span>
-</code></pre></div>
-<blockquote>
-<p>To select the environment kernel in Jupyter:
-Kernel → Change Kernel → Python (data4wa_env)</p>
-</blockquote>
-<p>Optional Cleanup: If you ever want to remove the kernel, use:
-<div class="highlight"><pre><span></span><code>jupyter<span class="w"> </span>kernelspec<span class="w"> </span>uninstall<span class="w"> </span>data4wa_env
-</code></pre></div></p>
-<hr />
 
 
 
@@ -1685,10 +1743,10 @@ Kernel → Change Kernel → Python (data4wa_env)</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>

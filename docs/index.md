@@ -6,11 +6,11 @@ Data4WA (Data for Water Accounting) is a technical documentation that guides you
 
 ---
 
-## 📌 Author  
+<!-- ## 📌 Author  
 - [**Aman Chaudhary**](https://www.linkedin.com/in/amanchry/)
 
 
----
+--- -->
 
 <!-- !!! warning "🚧 Under Development"  
     This documentation is currently a work in progress. Content may change as new datasets, scripts, and workflows are added.  

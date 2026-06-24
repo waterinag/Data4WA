@@ -1,26 +1,3 @@
-
-# LALOS World 3D - 30m (AW3D30)
-The "ALOS World 3D-30m" (AW3D30) dataset is a 30 meter resolution global digital surface model (DSM), developed by the Japan Aerospace Exploration Agency (JAXA). AWD30 was constructed from the Panchromatic Remote-sensing Instrument for Stereo Mapping (PRISM) on board Advanced Land Observing Satellite (ALOS), operated from 2006 to 2011.
-
----
-
-## Dataset Overview
-
-- **Product**: JAXA/ALOS/AW3D30
-- **Source**: [https://www.eorc.jaxa.jp/ALOS/en/dataset/aw3d30/aw3d30_e.htm](https://www.eorc.jaxa.jp/ALOS/en/dataset/aw3d30/aw3d30_e.htm)
-- **Format**: GeoTIFF
-- **Extent**: Global
-- **Spatial Resolution**: 30m
-
-
-
----
-
-
-## Download ALOS DSM 
-
-```python
-
 import geopandas as gpd
 from pystac_client import Client
 import planetary_computer as planetary_computer
@@ -31,11 +8,10 @@ from osgeo import gdal
 
 
 geojson_boundary = "/Users/amanchaudhary/Documents/Resources/World_Bank/Jordan/Shapefile/Jordan_L0.geojson"
-output_folder = "/Users/amanchaudhary/Documents/Resources/World_Bank/Jordan/alos_dem_30m"
-
-
+output_folder = "/Users/amanchaudhary/Documents/Resources/World_Bank/Jordan/ESA_LULC"
 os.makedirs(output_folder, exist_ok=True)
 
+year=2021 # 2020 or 2021
 
 aoi_gdf = gpd.read_file(geojson_boundary)
 
@@ -50,46 +26,40 @@ catalog = Client.open("https://planetarycomputer.microsoft.com/api/stac/v1")
 
 # loop over years
 
+prefix = f"ESA_WorldCover_10m_{year}"
+print(f"\n📅 Processing year: {year}")
 
 # Search WorldCover collection for this year
 search = catalog.search(
-    collections=["alos-dem"],
+    collections=["esa-worldcover"],
     bbox=bbox,
+    datetime=f"{year}-01-01/{year}-12-31",
 )
 
 try:
     items = list(search.get_items())
 except Exception as e:
-    raise Exception(f"Error retrieving results: {e}")
+    raise Exception(f"Error retrieving results for {year}: {e}")
 
 items = list(search.get_items())
 if not items:
-    raise RuntimeError(f"⚠️ No ESA WorldCover tiles found")
+    raise RuntimeError(f"⚠️ No ESA WorldCover tiles found for {year}")
 
 total = len(items)
 print(items)
 processed = 0
-print(f"🗂️ Found {total} tile(s)")
+print(f"🗂️ Found {total} tile(s) for {year}")
 
 
 # Download tiles
 all_tifs = []
-for item in tqdm(items, desc=f"Downloading"):
+for item in tqdm(items, desc=f"Downloading {year}"):
     signed_item = planetary_computer.sign(item)
-    print(signed_item)
-    print("Available assets:", signed_item.assets.keys())
-
-    # Try standard asset key
-    if "data" in signed_item.assets:
-        asset_href = signed_item.assets["data"].href
-    elif "DSM" in signed_item.assets:
-        asset_href = signed_item.assets["DSM"].href
-    else:
-        raise KeyError(f"No usable asset found for {item.id}: {signed_item.assets.keys()}")
-
+    asset_href = signed_item.assets["map"].href
     output_filename = f"{item.id}.tif"
     output_path = os.path.join(output_folder, output_filename)
-    all_tifs.append(output_path)
+
+
 
     if os.path.exists(output_path):
         print(f"✅ {output_path} already exists, skipping...")
@@ -105,15 +75,17 @@ for item in tqdm(items, desc=f"Downloading"):
                         f.write(chunk)
 
 
+    # 👇 always append
+    all_tifs.append(output_path)
 
-print("Merging tiles...")
+
+print("Merging tiles")
 
 # Mosaic into VRT
-prefix = f"alos_dem_30m"
 vrt_path = os.path.join(output_folder, f"{prefix}.vrt")
 merged_tif = os.path.join(output_folder, f"{prefix}.tif")
 gdal.BuildVRT(vrt_path, all_tifs)
-print(f"✅ Created VRT")
+print(f"✅ Created VRT for {year}")
 
 # Clip to AOI
 gdal.Warp(
@@ -132,10 +104,4 @@ for tif in all_tifs:
     os.remove(tif)
 if os.path.exists(vrt_path):
     os.remove(vrt_path)
-print(f"🗑️ Cleaned up intermediate files")
-
-
-```
-
----
-
+print(f"🗑️ Cleaned up intermediate files for {year}")
