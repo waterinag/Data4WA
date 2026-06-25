@@ -8,13 +8,14 @@ import geopandas as gpd
 from shapely.geometry import box
 
 first_year = 2018
-last_year = 2019
+last_year = 2025
 
 
 dataset=['ETb_WaPORv3','ETg_WaPORv3']
 
-output_folder_path = ""   
+output_folder_path = "/Users/amanchaudhary/Documents/Resources/World_Bank/CongoBasin"   
 geojson_boundary = "/Users/amanchaudhary/Documents/Resources/World_Bank/CongoBasin/shapefiles/CongoBasin.geojson" 
+
 
 
 
